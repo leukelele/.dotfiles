@@ -7,7 +7,7 @@ While this is meant as a guide for my future self, it feels almost more like a p
 `gnome-shell-extension`
 `gnome-tweak-tool`
 
-The `.themes` folder requires that you have `gnome-shell-extensions` so that you may install and enable [User Themes](https://extensions.gnome.org/extension/19/user-themes/). Following, switch the current gnome theme to the available theme, in the `themes` folder, in `gnome-tweak-tool`.
+The `.themes` folder requires that you have `gnome-shell-extension` so that you may install and enable [User Themes](https://extensions.gnome.org/extension/19/user-themes/). Following, switch the current gnome theme to the available theme in `gnome-tweak-tool`.
 
 
 

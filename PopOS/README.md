@@ -1,6 +1,6 @@
 # PopOS dotfiles
 
-While this is meant as a guide for my future self, it feels almost more like a presentation of my current knowledge to my future self.
+While this is meant as a guide for my future self, it feels almost more like a time capsule of sorts.
 
 Note that PopOS uses a gnome desktop environment.
 

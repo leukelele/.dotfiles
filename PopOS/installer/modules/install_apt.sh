@@ -28,3 +28,4 @@ install codium
 # applications
 install thunderbird
 install firefox
+install discord

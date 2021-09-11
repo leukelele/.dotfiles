@@ -6,6 +6,6 @@ Note that PopOS has a gnome desktop environment.
 
 ## Installation
 
-1. Navigate to the installer file.
-2. `chmod +x Installer.sh`
-3. `./Installer.sh`
+1. Navigate the terminal to the installer file.
+2. Input `chmod +x Installer.sh`
+3. Input `./Installer.sh`

@@ -10,4 +10,4 @@ The installer is not yet complete.
 
 1. Navigate the terminal to the installer file.
 2. Input `chmod +x Installer.sh`
-3. Input `./Installer.sh`
+3. Input `./installer.sh`

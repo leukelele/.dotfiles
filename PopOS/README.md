@@ -4,21 +4,8 @@ While this is meant as a guide for my future self, it feels almost more like a p
 
 Note that PopOS has a gnome desktop environment.
 
-## Requirements
+## Installation
 
-`gnome-shell-extension`
-`gnome-tweak-tool`
-
-The `.themes` folder requires that you have `gnome-shell-extension` so that you may install and enable [User Themes](https://extensions.gnome.org/extension/19/user-themes/). Following, switch the current gnome theme to the available theme in `gnome-tweak-tool`.
-
-
-
-## Placement of files
-
-I am sure that this seems rather amateurish, but this is the best that I can do currently.
-
-| dotfile    | Placement   |
-| :--------: | :---------: |
-| .gitconfig | /home/user/ |
-| .ssh       | /home/user/ |
-| .themes    | /home/user/ |
+1. Navigate to the installer file.
+2. `chmod +x Installer.sh`
+3. `./Installer.sh`

@@ -2,7 +2,7 @@
 
 While this is meant as a guide for my future self, it feels almost more like a presentation of my current knowledge to my future self.
 
-Note that PopOS has a gnome desktop environment.
+Note that PopOS uses a gnome desktop environment.
 
 ## Installation
 

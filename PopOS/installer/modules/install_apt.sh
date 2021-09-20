@@ -19,6 +19,7 @@ function install
 install gnome-tweaks
 install gnome-shell-extensions
 install timeshift
+install protonvpn-cli
 
 # development
 install git

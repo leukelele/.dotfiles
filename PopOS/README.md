@@ -11,3 +11,5 @@ The installer is not yet complete.
 1. Navigate the terminal to the installer file.
 2. Input `chmod +x Installer.sh`
 3. Input `./installer.sh`
+
+After installation, the theme, wallpaper, and profile icon have yet to be set. At my current level of knowledge, I have no idea how to go about changing such aesthetics through the terminal.

@@ -24,7 +24,7 @@ install protonvpn-cli
 # development
 install git
 install vim
-g++
+install build-essential
 
 # applications
 install thunderbird

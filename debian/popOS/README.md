@@ -2,7 +2,7 @@
 
 While this is meant as a guide for my future self, it feels almost more like a time capsule of sorts.
 
-Note that PopOS uses a gnome desktop environment.
+~~Note that PopOS uses a gnome desktop environment.~~ This is no longer the case as System76 has elected to produce their own desktop environment.
 
 ## Installation
 

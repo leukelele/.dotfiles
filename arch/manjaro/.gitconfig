@@ -1,0 +1,7 @@
+[user]
+	name = Luke Le
+	email = 70491331+Ricealicious@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim

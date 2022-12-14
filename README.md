@@ -6,7 +6,7 @@
 ln -s target_path link path
 ```
 
-The command allows the flexibility of saving application configurationss, which may then be transferred over to a new system.
+The command allows the flexibility of saving application configurations, which may then be transferred over to a new system.
 
 ## Changelog
 - 12.13.22 The semester is drawing to a close and now I have time to reinstall my operating system. I would like to reorganize everything.

@@ -1,0 +1,10 @@
+- qbittorrent
+- protonvpn
+- rnote
+- timeshift
+- discord
+- keepassxc
+- nvim
+- zathura
+- flatpak
+	- obsidian

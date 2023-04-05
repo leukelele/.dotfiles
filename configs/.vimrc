@@ -1,1 +1,8 @@
-set tabstop=4 shiftwidth=4 expandtab ai
+set tabstop     =2 
+set shiftwidth  =2 
+set softtabstop =2
+set expandtab 
+set number
+set ai
+set clipboard   =unnamedplus
+syntax on

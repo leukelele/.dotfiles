@@ -1,1 +1,1 @@
-/home/lewkelele/.dotfiles/configs/.vimrc
+/home/leukelele/.dotfiles/configs/.vimrc

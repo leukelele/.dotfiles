@@ -10,13 +10,14 @@ yay -S timeshift protonvpn spotify
 
 # remove unnecessary apps
 sudo pacman -Rns nano
+rm .nanorc
 
 # symlinks
 create_config_link() {
     # Create the symlink to the .config directory
+    local ARG=$1
     ln -sf $HOME/.dotfiles/configs/.config/$ARG $HOME/.config/$ARG
-
-    echo "Symbolic links created successfully!"
+    echo "Symbolic link created successfully!"
 }
 
 create_config_link ../.vimrc

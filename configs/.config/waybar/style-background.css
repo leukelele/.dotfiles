@@ -250,7 +250,7 @@ window#waybar {
     color: @green;
     /* border-bottom: 2px solid @green; */
     border-radius: 10px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 #network.disconnected {
@@ -271,7 +271,7 @@ window#waybar {
 #temperature {
     color: @teal;
     /* border-bottom: 2px solid @teal; */
-    border-radius: 10px 0 0 10px;
+    border-radius: 0 0 0 0;
 }
 
 #temperature.critical {

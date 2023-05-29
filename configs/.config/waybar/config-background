@@ -23,18 +23,18 @@
 		"3": " ",
 		"4": " ",
 		"5": " ",
-		"6": " ",
-		"7": " ",
-		"8": " ",
-		"9": " ",
-		"10": " ",
+		"6": " 6",
+		"7": " 7",
+		"8": " 8",
+		"9": " 9",
+		"10": " 10",
         }
     },
 
     "custom/swap": {
         "on-click": "~/.config/waybar/scripts/swap.sh",
         "tooltip": "Swap between waybar configs",
-        "format": "Bg  "
+        "format": "Bg  "
     },    
 
     "sway/mode": {
@@ -100,7 +100,7 @@
             "warning": 30,
             "critical": 15
         },       
-        "format": " {icon}{capacity: >3}%",
+        "format": "{icon}{capacity: >3}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -120,7 +120,7 @@
 
     "pulseaudio": {
         "scroll-step": 1,
-        "format": " {icon}{volume: >3}%",
+        "format": "{icon}{volume: >3}%",
         "format-bluetooth": "{icon}{volume: >3}%",
         "format-muted":" muted",
         "format-icons": {

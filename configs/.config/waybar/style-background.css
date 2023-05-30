@@ -285,7 +285,7 @@ window#waybar {
 }
 
 #tray {
-    /* background-color: @base; */
+    background-color: @base;
     margin: 8px 10px;
     border-radius: 10px;
 }

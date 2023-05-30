@@ -9,7 +9,9 @@
     "modules-center": ["clock"],
     "modules-right": ["backlight", "pulseaudio", "temperature", "memory", "battery", "tray", "custom/power"], 
     
+ //
  // Modules configuration
+ //
  
     "sway/workspaces": {
         "disable-scroll": true,
@@ -118,6 +120,7 @@
         // "on-click": "kitty -e nmtui"
         "on-click": "nm-connection-editor"
     },
+
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}%",
@@ -136,19 +139,22 @@
         "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
         "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
     },
+
      "custom/pacman": {
         "format": " {}",
         "interval": 7200,                     // every two hours
         "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu", // update system
+        "on-click": "kitty -e sudo pacman -Syu", // update system
         "signal": 8
     },
+
     "custom/power": {
       	"format":"⏻",
        	"on-click": "nwgbar",
       	"tooltip": false,
    },
+
    "custom/keyboard-layout": {
       	"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
       	// Interval set only as a fallback, as the value is updated by signal
@@ -159,6 +165,7 @@
       	"tooltip": false,
         "on-click": "~/.config/waybar/scripts/keyhint.sh",
 },
+
      "custom/launcher": {
     	"format":" ",
     	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",

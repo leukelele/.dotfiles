@@ -9,7 +9,9 @@
     "modules-center": ["clock"],
     "modules-right": ["backlight", "pulseaudio", "temperature", "memory", "battery", "tray", "custom/power"], 
     
+ //
  // Modules configuration
+ //
  
     "sway/workspaces": {
         "disable-scroll": true,

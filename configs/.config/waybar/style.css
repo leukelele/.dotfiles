@@ -68,7 +68,7 @@ window#waybar {
     border-radius: 50%;
     /* background-color: @base; */
     margin: 0px 0px;
-    padding: 4 6 2 0;
+    padding: 4px 6px 2px 0px;
 }
 
 #workspaces button:hover {
@@ -128,7 +128,7 @@ window#waybar {
     border-style: solid;
     background-color: shade(@base, 1);
     opacity: 1;
-    margin: 8px 0;
+    margin: 8px 0px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -188,13 +188,13 @@ window#waybar {
 #backlight {
     color: @yellow;
     /* border-bottom: 2px solid @yellow; */
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #battery {
     color: #d8dee9;
     /* border-bottom: 2px solid #d8dee9; */
-    border-radius: 0 10px 10px 0;
+    border-radius: 0px 10px 10px 0px;
     margin-right: 4px;
 }
 
@@ -263,7 +263,7 @@ window#waybar {
 #temperature {
     color: @teal;
     /* border-bottom: 2px solid @teal; */
-    border-radius: 0 0 0 0;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #temperature.critical {

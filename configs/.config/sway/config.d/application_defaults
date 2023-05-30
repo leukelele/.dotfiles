@@ -11,6 +11,11 @@ for_window [app_id=thunar] focus
 assign [class="Telegram"] 4
 for_window [class="Telegram"] focus
 
+assign [app_id="discord"] 5
+for_window [app_id="discord"] focus
+
+assign [class="discord"] 5
+for_window [class="discord"] focus
 
 for_window [app_id="xed"] focus
 

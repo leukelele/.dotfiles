@@ -16,11 +16,8 @@ rm .nanorc
 create_config_link() {
     # Create the symlink to the .config directory
     local ARG=$1
-    ln -sf $HOME/.dotfiles/configs/.config/$ARG $HOME/.config/$ARG
+    ln -sf $HOME/.dotfiles/configs/.config/$ARG $HOME/.config/
     echo "Symbolic link created successfully!"
 }
 
-create_config_link ../.vimrc
-create_config_link ../.gitconfig
-create_config_link zathura
-create_config_link nvim
+create_config_link *

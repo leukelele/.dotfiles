@@ -5,5 +5,5 @@ show=dmenu
 width=100
 lines=4
 location=top_right
-x=-125
+x=-124
 y=-23

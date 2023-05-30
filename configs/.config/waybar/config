@@ -151,7 +151,7 @@
 
     "custom/power": {
       	"format":"⏻",
-       	"on-click": "nwg-bar",
+       	"on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
       	"tooltip": false,
    },
 
@@ -164,7 +164,7 @@
       	"signal": 1, // SIGHUP
       	"tooltip": false,
         "on-click": "~/.config/waybar/scripts/keyhint.sh",
-},
+   },
 
      "custom/launcher": {
     	"format":" ",

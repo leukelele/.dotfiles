@@ -1,6 +1,6 @@
 hide_scroll=true
 show=drun
-width=25%
+width=18%
 lines=10
 line_wrap=word
 term=kitty
@@ -12,7 +12,7 @@ layer=overlay
 allow_images=true
 insensitive=true
 prompt=
-image_size=22
+image_size=20
 display_generic=true
 location=top_left
 x=-10

@@ -62,11 +62,11 @@ color: #cad3f5;
 #text:selected {
 } */
 
-@define-color base #24273a;
+@define-color base   #24273a;
 @define-color mantle #1e2030;
-@define-color crust #181926;
+@define-color crust  #181926;
 
-@define-color text #cad3f5;
+@define-color text     #cad3f5;
 @define-color subtext0 #a5adcb;
 @define-color subtext1 #b8c0e0;
 
@@ -78,19 +78,19 @@ color: #cad3f5;
 @define-color overlay1 #8087a2;
 @define-color overlay2 #939ab7;
 
-@define-color blue #8aadf4;
-@define-color lavender #b7bdf8;
-@define-color sapphire #7dc4e4;
-@define-color sky #91d7e3;
-@define-color teal #8bd5ca;
-@define-color green #a6da95;
-@define-color yellow #eed49f;
-@define-color peach #f5a97f;
-@define-color maroon #ee99a0;
-@define-color red #ed8796;
-@define-color mauve #c6a0f6;
-@define-color pink #f5bde6;
-@define-color flamingo #f0c6c6;
+@define-color blue      #8aadf4;
+@define-color lavender  #b7bdf8;
+@define-color sapphire  #7dc4e4;
+@define-color sky       #91d7e3;
+@define-color teal      #8bd5ca;
+@define-color green     #a6da95;
+@define-color yellow    #eed49f;
+@define-color peach     #f5a97f;
+@define-color maroon    #ee99a0;
+@define-color red       #ed8796;
+@define-color mauve     #c6a0f6;
+@define-color pink      #f5bde6;
+@define-color flamingo  #f0c6c6;
 @define-color rosewater #f4dbd6;
 
 
@@ -101,19 +101,14 @@ color: #cad3f5;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 #entry:selected {
     color: @text;
     background-color: @mauve;
-    padding: 7px;
+    padding: 5px;
 }
 
 #text:selected {
@@ -138,7 +133,7 @@ color: #cad3f5;
     border: none;
     background-color: @base;
     border-radius: 5px;
-    margin: 0px 4px 8px 4px;
+    margin: 0px 4px 0px 4px;
     padding: 2px;
     color: @text;
 }
@@ -151,7 +146,7 @@ color: #cad3f5;
     background-color: @crust;
     border-radius: 10px;
     border: 1px solid @mauve;
-    padding: 10px;
+    padding: 15px;
     box-shadow: 0px 0px 3px 1px @base;
     margin: 25px;
 }

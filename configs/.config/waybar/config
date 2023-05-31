@@ -9,9 +9,9 @@
     "modules-center": ["clock"],
     "modules-right": ["backlight", "pulseaudio", "temperature", "memory", "battery", "tray", "custom/power"], 
     
- //
- // Modules configuration
- //
+//
+// Modules configuration
+//
  
     "sway/workspaces": {
         "disable-scroll": true,
@@ -61,7 +61,7 @@
     },
 
     "clock": {
-        "tooltip-format": "{:%A %B %d %Y | %I:%M %p}",
+        "tooltip-format": "{:%A %d %B %Y | %I:%M %p}",
         "format": " {:%m/%d/%Y  %H:%M}",	//24 hour format
         //"timezones": [ "Kolkata" ],
         //"max-length": 200

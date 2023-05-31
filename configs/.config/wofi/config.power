@@ -5,5 +5,6 @@ show=dmenu
 width=100
 lines=4
 location=top_right
+prompt=
 x=-124
 y=-23

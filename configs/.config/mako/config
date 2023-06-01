@@ -9,7 +9,7 @@ icon-path=/usr/share/icons/Arc-X-D
 max-icon-size=70
 layer=overlay
 
-default-timeout=5000
+default-timeout=3000
 
 [urgency=high]
 

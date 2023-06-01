@@ -77,11 +77,11 @@ window#waybar {
 }
 
 #workspaces button:hover * {
-    color: @mauve;
+    color: @whitesmoke;
 }
 
 #workspaces * {
-    color: whitesmoke;
+    color: @mauve;
 }
 
 #workspaces {
@@ -93,13 +93,13 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: @mauve;
+    color: @whitesmoke;
     border-radius: 20px;
     /* background-color: @flamingo; */
 }
 
 #workspaces button.focused * {
-    color: @mauve;
+    color: @whitesmoke;
 }
 
 #mode {
@@ -173,14 +173,14 @@ window#waybar {
 
 #custom-swap {
     border-radius: 10px;
-    color: @mauve;
+    color: @lavender;
     margin-left: 10px;
     background-color: @base;
 }
 
 #clock {
     /* background-color:#a3be8c; */
-    color: @sky;
+    color: @whitesmoke;
     border-radius: 10px;
     margin: 8px 10px;
 }

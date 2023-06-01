@@ -36,8 +36,8 @@
   */
 
 /* -----------------------------------------------------------------------------
-   * Base styles
-   * -------------------------------------------------------------------------- */
+  * Base styles
+  * -------------------------------------------------------------------------- */
 
 /* Reset all styles */
 
@@ -51,17 +51,16 @@
     font-size: 18px;
     font-weight: bold;
     /* padding-bottom:4px;
-      padding-top: 4px; */
-    transition: all 0.5s ease;
+     padding-top: 4px; */
 }
 
 window#waybar {
-    border-bottom: 4px solid shade(@base, 1.1);
+    border: 0px solid rgba(0, 0, 0, 0);
     /* border-radius: 10px; */
     /* background:#2d2a2e; */
     /* background-color: rgba(36, 39, 58, 0.85); */
-    /* background-color: rgba(0, 0, 0, 0); */
-    background-color: shade(#1e1e2e, 0.95);
+    background-color: rgba(0, 0, 0, 0);
+    /* background-color: shade(#1e1e2e, 0.95); */
 }
 
 #workspaces button {
@@ -69,16 +68,16 @@ window#waybar {
     border-radius: 50%;
     /* background-color: @base; */
     margin: 0px 0px;
-    padding: 2px 6px 2px 0px;
-}
-
-#workspaces button:hover * {
-    color: @mauve;
+    padding: 4px 6px 2px 0px;
 }
 
 #workspaces button:hover {
     color: @mauve;
     border-radius: 20px;
+}
+
+#workspaces button:hover * {
+    color: @mauve;
 }
 
 #workspaces * {
@@ -109,7 +108,6 @@ window#waybar {
 
 #clock,
 #custom-swap,
-#custom-background,
 #custom-cava-internal,
 #battery,
 #cpu,
@@ -124,22 +122,18 @@ window#waybar {
 #tray,
 #custom-power,
 #custom-pacman,
+#custom-launcher,
 #mpd {
     padding: 5px 8px;
     border-style: solid;
-    background-color: shade(@base, 1.1);
+    background-color: shade(@base, 1);
     opacity: 1;
     margin: 8px 0px;
 }
 
 /* -----------------------------------------------------------------------------
-   * Module styles
-   * -------------------------------------------------------------------------- */
-#custom-cava-internal {
-    border-radius: 10px;
-    color: @mauve;
-}
-
+  * Module styles
+  * -------------------------------------------------------------------------- */
 #mpd {
     border-radius: 10px;
     color: @mauve;
@@ -172,18 +166,16 @@ window#waybar {
     font-size: 14px;
 }
 
-#custom-swap {
+#custom-cava-internal {
     border-radius: 10px;
-    color: @base;
-    margin-left: 10px;
-    background-color: @mauve;
+    color: @mauve;
 }
 
-#custom-background {
-    border-radius: 0px 10px 10px 0px;
+#custom-swap {
+    border-radius: 10px;
+    color: @mauve;
+    margin-left: 10px;
     background-color: @base;
-    color: white;
-    padding: 5px 14px 5px 5px;
 }
 
 #clock {
@@ -294,15 +286,16 @@ window#waybar {
 #custom-power {}
 
 #custom-launcher {
-    background-color: shade(@base, 1.1);
-    color: @mauve;
-    border-radius: 0px 15px 0px 0px;
-    padding: 5px 10px 5px 10px;
+    background-color: @mauve;
+    color: @base;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-left: 15px;
 }
 
 #custom-power {
-    color: @base;
-    background-color: @red;
+    color: @whitesmoke;
+    background-color: @base;
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 15px;
@@ -313,7 +306,7 @@ window#waybar {
     border-style: hidden;
     margin-left: 10px;
     /* margin-top:1px;  
-      padding: 8px 1rem; */
+     padding: 8px 1rem; */
     margin-right: 10px;
     color: #eceff4;
 }
@@ -325,86 +318,86 @@ window#waybar {
 #custom-keyboard-layout {
     color: @peach;
     /* border-bottom: 2px solid @peach; */
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0 10px 10px 0;
     margin-right: 10px;
 }
 
 
 
 /* window#waybar {
-      background: #2d2a2e;
-  }
-  
-  * {
-      color: #c8b9a9;
-      font-family: Ubuntu Mono, sans-serif;
-      font-size: 12px;
-  }
-  
-  #workspaces button.focused {
-      color: #f2e5bc;
-  }
-  
-  #workspaces button {
-      color: #c8b9a9;
-  }
-  
-  .separator {
-      background-color: #c8b9a9;
-  }
-  
-  #mode {
-      color: #ebcb8b;
-  }
-  
-  #clock {
-      color: #a3be8c;
-  }
-  
-  #battery {
-      color: #d8dee9;
-  }
-  
-  #battery.charging {
-      color: #b48ead;
-  }
-  
-  #battery.critical:not(.charging) {
-      color: #bf616a;
-  }
-  
-  #cpu {
-      color: #a3be8c;
-  }
-  
-  #memory {
-      color: #d3869b;
-  }
-  
-  #network {
-      color: #8fbcbb;
-  }
-  
-  #network.disabled {
-      color: #bf616a;
-  }
-  
-  #network.disconnected {
-      color: #bf616a;
-  }
-  
-  #pulseaudio {
-      color: #b48ead;
-  }
-  
-  #pulseaudio.muted {
-      color: #bf616a;
-  }
-  
-  #temperature {
-      color: #8fbcbb;
-  }
-  
-  #temperature.critical {
-      color: #bf616a;
-  } */
+     background: #2d2a2e;
+ }
+ 
+ * {
+     color: #c8b9a9;
+     font-family: Ubuntu Mono, sans-serif;
+     font-size: 12px;
+ }
+ 
+ #workspaces button.focused {
+     color: #f2e5bc;
+ }
+ 
+ #workspaces button {
+     color: #c8b9a9;
+ }
+ 
+ .separator {
+     background-color: #c8b9a9;
+ }
+ 
+ #mode {
+     color: #ebcb8b;
+ }
+ 
+ #clock {
+     color: #a3be8c;
+ }
+ 
+ #battery {
+     color: #d8dee9;
+ }
+ 
+ #battery.charging {
+     color: #b48ead;
+ }
+ 
+ #battery.critical:not(.charging) {
+     color: #bf616a;
+ }
+ 
+ #cpu {
+     color: #a3be8c;
+ }
+ 
+ #memory {
+     color: #d3869b;
+ }
+ 
+ #network {
+     color: #8fbcbb;
+ }
+ 
+ #network.disabled {
+     color: #bf616a;
+ }
+ 
+ #network.disconnected {
+     color: #bf616a;
+ }
+ 
+ #pulseaudio {
+     color: #b48ead;
+ }
+ 
+ #pulseaudio.muted {
+     color: #bf616a;
+ }
+ 
+ #temperature {
+     color: #8fbcbb;
+ }
+ 
+ #temperature.critical {
+     color: #bf616a;
+ } */

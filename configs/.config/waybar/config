@@ -36,7 +36,7 @@
     "custom/swap": {
         "on-click": "~/.config/waybar/scripts/swap.sh",
         "tooltip": "Swap between waybar configs",
-        "format": "Bg  "
+        "format": "Bg  "
     },    
 
     "sway/mode": {
@@ -145,17 +145,28 @@
         "interval": 7200,                     // every two hours
         "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu", // update system
+        "on-click": "kitty -e sudo pacman -Syu", // update system
         "signal": 8
     },
 
     "custom/power": {
       	"format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+       	"on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
       	"tooltip": false,
    },
 
-   "custom/launcher": {
+   "custom/keyboard-layout": {
+      	"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+      	// Interval set only as a fallback, as the value is updated by signal
+      	"interval": 1,
+      	"format": "  {}", // Icon: keyboard
+      	// Signal sent by Sway key binding (~/.config/sway/key-bindings)
+      	"signal": 1, // SIGHUP
+      	"tooltip": false,
+        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+   },
+
+     "custom/launcher": {
     	"format":" ",
     	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     	"tooltip": false,

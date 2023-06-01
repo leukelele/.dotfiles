@@ -21,47 +21,6 @@ author: "arcticicestudio"
 @define-color base0F #B48EAD;
 
 
-/* *{
-    font-family: UbuntuMono;
-}
-
-#window {
-    margin: 0px 5px 0px 5px;
-
-}
-
-#inner-box {
-    background-color: @back;
-
-}
-
-#outer-box {
-  margin: 5px;
-  padding:10px;
-  background-color: @back;
-  margin-top: -22px;
-}
-
-#scroll {
-}
-
-#text {
-padding: 5px;
-color: #cad3f5;
-}
-
-
-#entry {
-  
-}
-
-#entry:selected {
-    background-color: @base03;
-}
-
-#text:selected {
-} */
-
 @define-color base   #24273a;
 @define-color mantle #1e2030;
 @define-color crust  #181926;
@@ -95,72 +54,72 @@ color: #cad3f5;
 
 
 #entry {
-    border-radius: 5px;
-    padding: 5px 2px 5px 2px;
-    margin: 0px 4px 0px 4px;
+  border-radius: 5px;
+  padding: 5px 2px 5px 2px;
+  margin: 0px 4px 0px 4px;
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 #entry:selected {
-    color: @text;
-    background-color: @mauve;
-    padding: 5px;
+  color: @text;
+  background-color: @whitesmoke;
+  padding: 5px;
 }
-
+ 
 #text:selected {
-    color: @base;
+  color: @base;
 }
-
+ 
 #window {
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
-    background-color: transparent;
-    font-family: Ubuntu Mono;
-    font-size: 18;
-}
-
-#inner-box {
-    color: @crust;
-    border-radius: 0px;
-    /* margin-right: 180px; */
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  background-color: transparent;
+  font-family: Ubuntu Mono;
+  font-size: 18;
 }
 
 #input {
-    border: none;
-    background-color: @base;
-    border-radius: 5px;
-    margin: 0px 4px 0px 4px;
-    padding: 2px;
-    color: @text;
+  border: none;
+  background-color: @base;
+  border-radius: 5px;
+  margin: 0px 4px 0px 4px;
+  padding: 2px;
+  color: @text;
 }
 
 #input:focus {
-    border: 0px solid @mauve;
+  border: 0px solid @whitesmoke;
+}
+
+#inner-box {
+  color: @crust;
+  border-radius: 0px;
+/* margin-right: 180px; */
 }
 
 #outer-box {
-    background-color: @crust;
-    border-radius: 10px;
-    border: 1px solid @mauve;
-    padding: 15px;
-    box-shadow: 0px 0px 3px 1px @base;
-    margin: 25px;
+  background-color: @crust;
+  border-radius: 10px;
+  border: 1px solid @whitesmoke;
+  padding: 15px;
+  box-shadow: 0px 0px 3px 1px @base;
+  margin: 25px;
 }
 
 #scroll {
-    background-color: @crust;
+  background-color: @crust;
 }
 
 #text {
-    color: @text;
-    background-color: transparent;
-}
+  color: @text;
+  background-color: transparent;
+} 
 
 #img {
-    background-color: transparent;
-    margin-right: 15px;
+  background-color: transparent;
+  margin-right: 15px;
 }

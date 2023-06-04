@@ -4,7 +4,7 @@
 # Get the directory paths used by the bash script
 #
 script_dir=$(dirname "$(readlink -f "${0:A}")")
-dotconfig_dir=script_dir/configs/.config
+dotconfig_dir=script_dir/configs/
 
 #
 # given two directories, creates a symlink of the original directory in dest. directory
@@ -38,7 +38,7 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord keepassxc neovim zathura zathura-pdf-mupdf pdfarranger spotify xournalpp 
+yay -S discord keepassxc pdfarranger spotify xournalpp 
 
 # app distribution; mainly used for access towards obsidian
 yay -S flatpak
@@ -48,7 +48,38 @@ flatpak install -y app/md.obsidian.Obsidian/x86_64/stable
 #
 # install dotfile dependencies and create necessary symlinks
 #
-yay -S mako swaylock-effects wofi waybar-hyprland-git timeshift protonvpn nwg-look nemo xfce4-terminal kitty
+yay -S timeshift protonvpn nwg-look nemo xfce4-terminal
+
+# kitty
+yay -S kitty
+create_symlink configs/kitty
+
+# mako
+yay -S mako
+create_symlink configs/mako 
+
+# nvim
+yay -S neovim
+create_symlink configs/nvim
+
+# sway
+create_symlink configs/sway
+
+# swaylock
+yay -S swaylock-effects
+create_symlink configs/swaylock
+
+# waybar
+yay -S waybar-hyprland-git
+create_symlink configs/waybar
+
+# wofi
+yay -S wofi
+create_symlink configs/wofi
+
+# zathura
+yay -S zathura zathura-pdf-mupdf
+create_symlink configs/zathura
 
 #
 # remove unnecessary apps

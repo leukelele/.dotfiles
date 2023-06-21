@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#####################################################################################
+# todo:                                                                             #
+# - [ ] include in script to download and set zsh as default                        #
+# - [ ] zsh themes                                                                  #
+# - [ ] install and make default sddm for login manager                             #
+# - [ ] sddm themes                                                                 #
+# - [ ] grub cutsomization too                                                      #
+# - [ ] go over script and rewrite for streamlining (to be done a later future)     #
+#####################################################################################
+
 #
 # Get the directory paths used by the bash script
 #

@@ -104,7 +104,7 @@ window#waybar {
 }
 
 #mode {
-    color: @flamingo;
+    color: @blue;
 }
 
 #clock,
@@ -174,7 +174,7 @@ window#waybar {
 
 #custom-swap {
     border-radius: 10px;
-    color: @rosewater;
+    color: @maroon;
     margin-left: 10px;
     background-color: @base;
 }
@@ -259,7 +259,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: @teal;
+    color: @green;
     /* border-bottom: 2px solid @flamingo; */
 }
 

@@ -2,8 +2,8 @@
 
 #####################################################################################
 # todo:                                                                             #
-# - [ ] include in script to download and set zsh as default                        #
-# - [ ] zsh themes                                                                  #
+# - [x] include in script to download and set zsh as default                        #
+# - [x] zsh themes                                                                  #
 # - [ ] install and make default sddm for login manager                             #
 # - [ ] sddm themes                                                                 #
 # - [ ] grub cutsomization too                                                      #
@@ -41,6 +41,7 @@ create_symlink() {
 
 #
 # install apps and necessities
+# also creates necessary symlinks
 #
 
 # pacman wrapper for convenience
@@ -48,15 +49,14 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord keepassxc pdfarranger spotify xournalpp flatpak timeshift protonvpn nwg-look nemo xfce4-terminal kitty mako neovim swaylock-effects waybar-git wofi zathura zathura-pdf-mupdf
+yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome timeshift protonvpn nwg-look nemo xfce4-terminal kitty mako neovim swaylock-effects waybar-git wofi zathura zathura-pdf-mupdf zsh catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git sddm-git
 
 # app distribution; mainly used for access towards obsidian
 flatpak update -y
 flatpak install -y app/md.obsidian.Obsidian/x86_64/stable
 
-#
-# create necessary symlinks
-#
+# catppuccin theme
+papirus-folders -C cat-macchiato-mauve
 
 # kitty
 create_symlink configs/kitty
@@ -67,11 +67,17 @@ create_symlink configs/mako
 # nvim
 create_symlink configs/nvim
 
+# sddm
+sudo systemctl enable sddm.service
+
 # sway
 create_symlink configs/sway
 
 # swaylock
 create_symlink configs/swaylock
+
+# timeshift
+sudo systemctl enable cronie.service
 
 # waybar
 create_symlink configs/waybar
@@ -81,6 +87,17 @@ create_symlink configs/wofi
 
 # zathura
 create_symlink configs/zathura
+
+# zsh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+create_symlink configs/.zshrc $HOME
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+zsh
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
 
 #
 # remove unnecessary apps

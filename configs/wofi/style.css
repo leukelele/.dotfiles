@@ -65,13 +65,13 @@ author: "arcticicestudio"
 }
 
 #entry:selected {
-  color: @text;
+  color: @crust;
   background-color: @mauve;
   padding: 5px;
 }
  
 #text:selected {
-  color: @base;
+  color: @crust;
 }
  
 #window {
@@ -84,7 +84,7 @@ author: "arcticicestudio"
 
 #input {
   border: none;
-  background-color: @base;
+  background-color: @crust;
   border-radius: 5px;
   margin: 0px 4px 0px 4px;
   padding: 2px;

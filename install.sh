@@ -4,7 +4,7 @@
 # todo:                                                                             #
 # - [x] include in script to download and set zsh as default                        #
 # - [x] zsh themes                                                                  #
-# - [ ] install and make default sddm for login manager                             #
+# - [x] install and make default sddm for login manager                             #
 # - [ ] sddm themes                                                                 #
 # - [ ] grub cutsomization too                                                      #
 # - [ ] go over script and rewrite for streamlining (to be done a later future)     #
@@ -49,7 +49,7 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome timeshift protonvpn nwg-look nemo xfce4-terminal kitty mako neovim swaylock-effects waybar-git wofi zathura zathura-pdf-mupdf zsh catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git sddm-git
+yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome timeshift protonvpn nwg-look nemo xfce4-terminal kitty mako neovim swaylock-effects waybar-git wofi zathura zathura-pdf-mupdf zsh catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git sddm-git sddm-sugar-candy-git
 
 # app distribution; mainly used for access towards obsidian
 flatpak update -y
@@ -58,17 +58,24 @@ flatpak install -y app/md.obsidian.Obsidian/x86_64/stable
 # catppuccin theme
 papirus-folders -C cat-macchiato-mauve
 
+# git
+create_symlink configs/.gitconfig $HOME
+
 # kitty
 create_symlink configs/kitty
 
 # mako
 create_symlink configs/mako
 
+# nemo
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+
 # nvim
 create_symlink configs/nvim
 
 # sddm
 sudo systemctl enable sddm.service
+sudo cp -i /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf
 
 # sway
 create_symlink configs/sway

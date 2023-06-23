@@ -104,7 +104,7 @@ window#waybar {
 }
 
 #mode {
-    color: #ebcb8b;
+    color: @flamingo;
 }
 
 #clock,
@@ -259,7 +259,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: @flamingo;
+    color: @teal;
     /* border-bottom: 2px solid @flamingo; */
 }
 

@@ -174,7 +174,7 @@ window#waybar {
 
 #custom-swap {
     border-radius: 10px;
-    color: @maroon;
+    color: @pink;
     margin-left: 10px;
     background-color: @base;
 }
@@ -238,7 +238,7 @@ window#waybar {
 }
 
 #memory {
-    color: @sky;
+    color: @teal;
 }
 
 #network.disabled {

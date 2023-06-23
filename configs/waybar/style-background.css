@@ -73,7 +73,7 @@ window#waybar {
 }
 
 #workspaces button:hover * {
-    color: @whitesmoke;
+    color: @mauve;
 }
 
 #workspaces button:hover {
@@ -82,7 +82,7 @@ window#waybar {
 }
 
 #workspaces * {
-    color: @mauve;
+    color: @whitesmoke;
 }
 
 #workspaces {
@@ -94,13 +94,13 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: @whitesmoke;
+    color: @mauve;
     border-radius: 20px;
     /* background-color: @flamingo; */
 }
 
 #workspaces button.focused * {
-    color: @whitesmoke;
+    color: @mauve;
 }
 
 #mode {

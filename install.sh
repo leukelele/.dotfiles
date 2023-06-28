@@ -127,3 +127,6 @@ zsh
 #
 sudo pacman -Rns nano
 rm .nanorc
+
+ssh-keygen -t ed25519 -C "luke.bk.le@gmail.com"
+cat ~/.ssh/id_ed25519.pub

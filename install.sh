@@ -49,31 +49,42 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome timeshift protonvpn nwg-look nemo xfce4-terminal kitty mako neovim swaylock-effects waybar-git wofi zathura zathura-pdf-mupdf zsh catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git sddm-git sddm-sugar-candy-git
+yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome protonvpn nwg-look xfce4-terminal
 
 # app distribution; mainly used for access towards obsidian
 flatpak update -y
 flatpak install -y app/md.obsidian.Obsidian/x86_64/stable
 
 # catppuccin theme
+yay -S catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git
 papirus-folders -C cat-macchiato-mauve
 
+# emacs
+yay -S emacs ripgrep
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
 # git
-create_symlink configs/.gitconfig $HOME
+create_symlink configs/.gitconfig ~/
 
 # kitty
+yay -S kitty
 create_symlink configs/kitty
 
 # mako
+yay -S mako
 create_symlink configs/mako
 
 # nemo
+yay -S nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 
 # nvim
+yay -S neovim
 create_symlink configs/nvim
 
 # sddm
+yay -S sddm-git sddm-sugar-candy-git
 sudo systemctl enable sddm.service
 sudo cp -i /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf
 
@@ -81,30 +92,35 @@ sudo cp -i /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf
 create_symlink configs/sway
 
 # swaylock
+yay -S swaylock-effects-git
 create_symlink configs/swaylock
 
 # timeshift
+yay -S timeshift
 sudo systemctl enable cronie.service
 
 # waybar
+yay -S waybar-git
 create_symlink configs/waybar
 
 # wofi
 create_symlink configs/wofi
 
 # zathura
+yay -S zathura zathura-pdf-mupdf
 create_symlink configs/zathura
 
 # zsh
+yay -S zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-create_symlink configs/.zshrc $HOME
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 zsh
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=""
+# place in zsh file
+# setopt PROMPT_CR
+# setopt PROMPT_SP
+# export PROMPT_EOL_MARK=""
 
 #
 # remove unnecessary apps

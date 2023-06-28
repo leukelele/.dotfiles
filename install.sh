@@ -49,7 +49,7 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome protonvpn nwg-look xfce4-terminal
+yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome protonvpn nomacs nwg-look xfce4-terminal
 
 # app distribution; mainly used for access towards obsidian
 flatpak update -y
@@ -58,6 +58,9 @@ flatpak install -y app/md.obsidian.Obsidian/x86_64/stable
 # catppuccin theme
 yay -S catppuccin-gtk-theme-macchiato papirus-icon-theme papirus-folders-catppuccin-git
 papirus-folders -C cat-macchiato-mauve
+git clone https://github.com/catppuccin/grub.git && cd grub
+sudo cp -r src/* /usr/share/grub/themes/
+cd
 
 # emacs
 yay -S emacs ripgrep

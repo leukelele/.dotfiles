@@ -45,13 +45,13 @@ exec swayidle -w\
     bindsym $mod+Return exec $term-float
 
     # Open the power menu
-    bindsym $mod+Shift+e exec $powermenu
+    bindsym $mod+Shift+e floating toggle
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d focus mode_toggle
 
     # Activities
     bindsym $mod+p exec ~/.config/wofi/windows.py
@@ -135,10 +135,10 @@ exec swayidle -w\
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+space exec $powermenu
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+space exec $menu
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -220,6 +220,7 @@ bindsym $mod+r mode "resize"
 #
     bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
     bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
+    bindsym Shift+$mod+s exec ~/.config/sway/scripts/screenshot.sh
 #
 # Keybindings List
 #

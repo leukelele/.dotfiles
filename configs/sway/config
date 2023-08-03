@@ -2,6 +2,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# starts emacs server at desktop startup
+exec /usr/bin/emacs --daemon
+
 # user config directory
 include $HOME/.config/sway/config.d/*
 

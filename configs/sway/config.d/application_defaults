@@ -9,7 +9,10 @@ for_window [app_id="nemo"] focus
 assign [class="nemo"] 2
 for_window [class="nemo"] focus
 
-assign [class="Telegram"] 4
+assign [class="obsidian"] 4
+for_window [class="obsidian"] focus
+
+assign [class="Telegram"] 5
 for_window [class="Telegram"] focus
 
 assign [app_id="discord"] 5

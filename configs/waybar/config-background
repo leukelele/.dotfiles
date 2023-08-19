@@ -3,7 +3,6 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30,
     "margin": "0 0 0 0",
-    //"width": 1350, // Waybar width
     // Choose the order of the modules idle_inhibitor
     "modules-left": ["sway/workspaces", "custom/swap"],
     "modules-center": ["clock"],
@@ -68,22 +67,9 @@
         "interval": 1
     },
 
-    "cpu": {
-        "format": "{usage: >3}%",
-        "on-click": "kitty -e htop"
-    },
-
     "memory": {
         "format": " {:}%",
-        "on-click": "kitty -e htop"
-    },
-
-    "temperature": {
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C ",
-        "format": " {temperatureC}°C"
+        "on-click": "kitty htop"
     },
 
     "backlight": {
@@ -107,7 +93,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-        //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
     },
 
      "network": {
@@ -138,15 +123,6 @@
         "on-click": "pavucontrol",
         "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
         "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
-    },
-
-     "custom/pacman": {
-        "format": " {}",
-        "interval": 7200,                     // every two hours
-        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu", // update system
-        "signal": 8
     },
 
     "custom/power": {

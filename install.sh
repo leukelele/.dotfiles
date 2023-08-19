@@ -62,11 +62,6 @@ git clone https://github.com/catppuccin/grub.git && cd grub
 sudo cp -r src/* /usr/share/grub/themes/
 cd
 
-# emacs
-yay -S emacs ripgrep
-git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-
 # git
 create_symlink configs/.gitconfig ~/
 

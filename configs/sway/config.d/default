@@ -70,7 +70,7 @@ exec swayidle -w\
     # For some reason XF86TouchpadToggle does not work; the system
     # registers the input but doesn't react to it.
     bindsym $mod+b input type:touchpad events toggle enabled disabled
-    
+
 #
 # Moving around:
 #

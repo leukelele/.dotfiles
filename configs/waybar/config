@@ -4,7 +4,7 @@
     "height": 30,
     "margin": "0 0 0 0",
     // Choose the order of the modules idle_inhibitor
-    "modules-left": ["sway/workspaces"],
+    "modules-left": ["sway/workspaces", "idle_inhibitor"],
     "modules-center": ["clock"],
     "modules-right": ["backlight", "pulseaudio", "memory", "battery", "tray", "custom/power"],
     
@@ -48,10 +48,11 @@
   
     "idle_inhibitor": {
         "format": "{icon}",
-       "format-icons": {
+        "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "timeout": 120
     },
 
     "tray": {

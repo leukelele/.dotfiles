@@ -49,7 +49,7 @@ sudo pacman -Syu
 sudo pacman -S yay
 
 # apps
-yay -S discord spotify keepassxc pdfarranger xournalpp flatpak fonts-font-awesome protonvpn nomacs nwg-look xfce4-terminal
+yay -S discord spotify keepassxc pdfarranger xournalpp flatpak  protonvpn nomacs nwg-look xfce4-terminal
 
 # app distribution; mainly used for access towards obsidian
 flatpak update -y
@@ -64,6 +64,9 @@ cd
 
 # git
 create_symlink configs/.gitconfig ~/
+
+# gnome-keyring (for protonvpn)
+yay -S gnome-keyring
 
 # kitty
 yay -S kitty
@@ -103,6 +106,9 @@ create_symlink configs/waybar
 
 # wofi
 create_symlink configs/wofi
+
+# vlc
+yay -S vlc
 
 # zathura
 yay -S zathura zathura-pdf-mupdf

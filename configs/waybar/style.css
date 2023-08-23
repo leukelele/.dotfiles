@@ -102,6 +102,11 @@ window#waybar {
     color: @mauve;
 }
 
+#workspaces button.urgent {
+    color: @pink;
+    border-radius: 20px;
+}
+
 #mode {
     color: @blue;
 }

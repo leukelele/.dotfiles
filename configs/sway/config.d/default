@@ -51,7 +51,7 @@ exec swayidle -w\
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d focus mode_toggle
+    # bindsym $mod+d focus mode_toggle
 
     # Activities
     bindsym $mod+p exec ~/.config/wofi/windows.py
@@ -66,6 +66,11 @@ exec swayidle -w\
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Enable/disable touchpad
+    # For some reason XF86TouchpadToggle does not work; the system
+    # registers the input but doesn't react to it.
+    bindsym $mod+b input type:touchpad events toggle enabled disabled
+    
 #
 # Moving around:
 #
@@ -123,13 +128,13 @@ exec swayidle -w\
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+c splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
+    bindsym $mod+a layout tabbed
     bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+d layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -141,7 +146,7 @@ exec swayidle -w\
     bindsym $mod+space exec $menu
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -149,7 +154,7 @@ exec swayidle -w\
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+Shift+minus scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
@@ -216,10 +221,10 @@ bindsym $mod+r mode "resize"
     bindsym $mod+n exec nemo
     bindsym $mod+o exec firefox
 #
-# Screenshots
+# Screenshot
 #
-    bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
-    bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
+    # bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
+    # bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
     bindsym Shift+$mod+s exec ~/.config/sway/scripts/screenshot.sh
 #
 # Keybindings List

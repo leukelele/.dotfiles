@@ -10,6 +10,10 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+# disables the touchscreen of current latop MSI Summit Flip Evo14
+input type:touch events disabled
+# input 1267:16394:ELAN_Touchscreen_Stylus events enabled
+
 # Read `man 5 sway-input` for more information about this section.
 #
 input type:keyboard xkb_layout "us"

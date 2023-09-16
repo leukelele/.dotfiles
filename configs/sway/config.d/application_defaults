@@ -3,6 +3,10 @@ assign [app_id="firefox"] 2
 for_window [app_id="firefox"] focus
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
+assign [app_id="thunderbird"] 2
+for_window [app_id="thunderbird"] focus
+assign [class="thunderbird"] 2
+for_window [class="thunderbird"] focus
 
 assign [app_id="nemo"] 3
 for_window [app_id="nemo"] focus

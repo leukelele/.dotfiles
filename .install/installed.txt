@@ -1,0 +1,14 @@
+- neovim
+- kitty
+- tmux
+- zsh
+- obsidian
+- thunderbird
+- zathura
+- zathura-pdf-mupdf-git
+- rate-mirrors
+
+
+==== kde ====
+- catppuccin
+- readjust resolution and global scale

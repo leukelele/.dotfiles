@@ -1,7 +1,0 @@
-[core]
-	editor = nvim
-[user]
-	name = leukelele
-	email = luke.bk.le@gmail.com
-[init]
-	defaultBranch = main

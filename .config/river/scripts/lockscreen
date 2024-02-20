@@ -5,6 +5,7 @@
 # Source Theme file
 DIR="$HOME/.config/river"
 source "$DIR"/theme/current.bash
+WALLPAPER="$HOME/.config/river/wallpapers/wallpaper.png"
 
 # Colors
 bg=${background:1}  fg=${foreground:1}
@@ -23,7 +24,7 @@ swaylock -f \
 	\
 	`# Appearance` \
 	--color ${bg}E6 \
-	--font 'JetBrainsMono Nerd Font' --font-size 18 \
+	--font 'JetBrainsMono Nerd Font' --font-size 36 \
 	\
 	`# Backspace Key` \
 	--key-hl-color ${green} \
@@ -33,7 +34,7 @@ swaylock -f \
 	\
 	`# Indicator` \
 	--indicator-radius 120 \
-	--indicator-thickness 10 \
+	--indicator-thickness 14 \
 	\
 	`# Inside Circle Colors` \
 	--inside-color ${alpha} \
@@ -69,4 +70,5 @@ swaylock -f \
 	--text-clear-color ${fg} \
 	--text-caps-lock-color ${fg} \
 	--text-ver-color ${bg} \
-	--text-wrong-color ${bg}
+	--text-wrong-color ${bg} \
+  --image $WALLPAPER

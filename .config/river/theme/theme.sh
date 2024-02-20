@@ -11,7 +11,7 @@ DIR="$HOME/.config/river"
 PATH_ALAC="$DIR/alacritty"
 PATH_FOOT="$DIR/foot"
 PATH_MAKO="$DIR/mako"
-#PATH_ROFI="$DIR/rofi"
+PATH_ROFI="$DIR/rofi"
 PATH_WAYB="$DIR/waybar"
 PATH_WOFI="$DIR/wofi"
 
@@ -79,9 +79,10 @@ source_pywal() {
 	accent="$color4"
 }
 
-## Wallpaper ---------------------------------
+# Wallpaper ---------------------------------
 apply_wallpaper() {
 	sed -i -e "s#WALLPAPER=.*#WALLPAPER='$wallpaper'#g" ${DIR}/scripts/wallpaper
+  sed -i -e "s#WALLPAPER=.*#WALLPAPER='$wallpaper'#g" ${DIR}/scripts/lockscreen
 	bash ${DIR}/scripts/wallpaper &
 }
 

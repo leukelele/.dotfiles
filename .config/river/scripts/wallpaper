@@ -4,6 +4,6 @@
 ##
 ## Set Wallpaper in River
 
-WALLPAPER="$HOME/.config/river/wallpapers/wallpaper.png"
+WALLPAPER='/home/leuk/Pictures/wallpapers/blue-circuits.png'
 
 swaybg --output '*' --mode fill --image "$WALLPAPER"

@@ -44,7 +44,7 @@ local startup_commands = {
   },
   -- Startup programs
   '/usr/lib/xfce-polkit/xfce-polkit',
-  { 'swayidle', 'timeout 300', script_dir .. '/lockscreen' },
+  { 'swayidle', 'timeout 10', script_dir .. '/lockscreen' },
   --{ 'swaybg', '--output "*"', '--mode fill', '--image', river_dir .. '/wallpapers/wallpaper.png' },
   { 'nm-applet', '--indicator' },
   script_dir .. '/wallpaper',
@@ -104,10 +104,10 @@ local inputs = {
 -- General Configs and Theming ─────────────────────────────────────────────────
 
 -- Colors
-background_color = '0x2E3440'
-focused_border = '0x81A1C1'
-unfocused_border = '0x39404f'
-urgent_border = '0xBF616A'
+background_color = '0x090b0a'
+focused_border = '0x907FE0'
+unfocused_border = '0x141917'
+urgent_border = '0x385F9D'
 
 local river_options = {
   -- Theme options

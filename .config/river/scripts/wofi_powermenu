@@ -20,9 +20,9 @@ uptime=$(uptime -p | sed -e 's/up //g')
 
 ## Entries
 shutdown=" shutdown"
-reboot=" restart"
+reboot=" reboot"
 lock=" lock"
-suspend=" sleep"
+suspend=" suspend"
 logout=" logout"
 
 # Ask for confirmation

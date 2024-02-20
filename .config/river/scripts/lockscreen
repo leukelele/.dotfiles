@@ -4,8 +4,8 @@
 
 # Source Theme file
 DIR="$HOME/.config/river"
+WALLPAPER='/home/leuk/Pictures/wallpapers/blue-circuits.png'
 source "$DIR"/theme/current.bash
-WALLPAPER="$HOME/.config/river/wallpapers/wallpaper.png"
 
 # Colors
 bg=${background:1}  fg=${foreground:1}
@@ -34,7 +34,7 @@ swaylock -f \
 	\
 	`# Indicator` \
 	--indicator-radius 120 \
-	--indicator-thickness 14 \
+	--indicator-thickness 12 \
 	\
 	`# Inside Circle Colors` \
 	--inside-color ${alpha} \

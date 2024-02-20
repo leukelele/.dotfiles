@@ -244,7 +244,7 @@
 	// waybar-river-tags
     "river/tags": {
         "num-tags": 9,
-        "tag-labels": ["", "", "", "", "", "漣", "", "", ""],
+        "tag-labels": ["", "", "", "", "", "漣", "", "", ""],
         "disable-click": false,
     },
            

@@ -1,17 +1,13 @@
-/* 
- * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
-*/
-
 /** ********** Colors ********** **/
-@define-color background     #2E3440;
-@define-color background-alt #39404f;
-@define-color foreground     #D8DEE9;
-@define-color selected       #81A1C1;
-@define-color black          #3B4252;
-@define-color red            #BF616A;
-@define-color green          #A3BE8C;
-@define-color yellow         #EBCB8B;
-@define-color blue           #81A1C1;
-@define-color magenta        #B48EAD;
-@define-color cyan           #88C0D0;
-@define-color white          #E5E9F0;
+@define-color background     #090b0a;
+@define-color background-alt #141917;
+@define-color foreground     #a6b9e7;
+@define-color selected       #907FE0;
+@define-color black          #090b0a;
+@define-color red            #385F9D;
+@define-color green          #8066B1;
+@define-color yellow         #977CDC;
+@define-color blue           #907FE0;
+@define-color magenta        #088CE5;
+@define-color cyan           #2888E1;
+@define-color white          #a6b9e7;

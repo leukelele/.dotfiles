@@ -44,7 +44,7 @@ local startup_commands = {
   },
   -- Startup programs
   '/usr/lib/xfce-polkit/xfce-polkit',
-  { 'swayidle', 'timeout 10', script_dir .. '/lockscreen' },
+  --{ 'swayidle', '-w', 'timeout 600', script_dir .. '/suspend' },
   --{ 'swaybg', '--output "*"', '--mode fill', '--image', river_dir .. '/wallpapers/wallpaper.png' },
   { 'nm-applet', '--indicator' },
   script_dir .. '/wallpaper',
@@ -56,6 +56,7 @@ local startup_commands = {
 }
 
 -- Output/Display/Monitor Config ───────────────────────────────────────────────
+
 
 -- Using `wlr-randr` for managing outputs.
 local outputs = {
@@ -115,7 +116,7 @@ local river_options = {
   ['border-color-focused'] = focused_border,
   ['border-color-unfocused'] = unfocused_border,
   ['border-color-urgent'] = urgent_border,
-  ['xcursor-theme'] = { 'Qogirr', 36 },
+  ['xcursor-theme'] = { 'Qogirr', 32 },
   --['background-color'] = background_color,
 
   -- Other options
@@ -679,6 +680,20 @@ local mappings = {
   --    },
   --  },
   --},
+  ['map-switch'] = {
+    normal = {
+      {
+        mod = 'lid',
+        key = 'close', 
+        command = 'spawn "source $HOME/.config/river/scripts/suspend"',
+      },
+      {
+        mod = 'lid',
+        key = 'open', 
+        command = 'spawn "wlr-randr --output eDP-1 on"',
+      },
+    },
+  },
 }
 
 -- Workspaces / Tags ───────────────────────────────────────────────────────────

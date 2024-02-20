@@ -63,7 +63,7 @@ local outputs = {
     mode = '2880x1800',
     pos = '0,0',
     transform = 'normal',
-    scale = '1.500000',
+    scale = '1.550000',
     preferred = true,
   },
 -- Laptop screen, mode: 1920x1080, scale: 1
@@ -111,7 +111,7 @@ urgent_border = '0xBF616A'
 
 local river_options = {
   -- Theme options
-  ['border-width'] = 2,
+  ['border-width'] = 4,
   ['border-color-focused'] = focused_border,
   ['border-color-unfocused'] = unfocused_border,
   ['border-color-urgent'] = urgent_border,
@@ -211,11 +211,13 @@ local mappings = {
         key = 'Return',
         command = { 'spawn', string.format([['%s/alacritty -f']], script_dir) },
       },
-      {
-        mod = { 'Super', 'Alt' },
-        key = 'Return',
-        command = { 'spawn', string.format([['%s/alacritty -F']], script_dir) },
-      },
+      --
+      -- literally no idea what this does
+      --{
+      --  mod = { 'Super', 'Alt' },
+      --  key = 'Return',
+      --  command = { 'spawn', string.format([['%s/alacritty -F']], script_dir) },
+      --},
 
       -- Terminal : foot
       --{
@@ -237,75 +239,77 @@ local mappings = {
       -- Applications
       {
         mod = { 'Super', 'Shift' },
-        key = 'F',
+        key = 'E',
         command = { 'spawn', [['thunar']] },
       },
-      {
-        mod = { 'Super', 'Shift' },
-        key = 'E',
-        command = { 'spawn', [['geany']] },
-      },
+      -- no need for this
+      --{
+      --  mod = { 'Super', 'Shift' },
+      --  key = 'E',
+      --  command = { 'spawn', [['geany']] },
+      --},
       {
         mod = { 'Super', 'Shift' },
         key = 'W',
         command = { 'spawn', [['firefox']] },
       },
 
-      -- Rofi
-      {
-        mod = 'Super',
-        key = 'D',
-        command = { 'spawn', string.format([['%s/rofi_launcher']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'B',
-        command = { 'spawn', string.format([['%s/rofi_bluetooth']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'X',
-        command = { 'spawn', string.format([['%s/rofi_powermenu']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'M',
-        command = { 'spawn', string.format([['%s/rofi_music']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'N',
-        command = { 'spawn', string.format([['%s/rofi_network']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'R',
-        command = { 'spawn', string.format([['%s/rofi_runner']], script_dir) },
-      },
-      {
-        mod = 'Super',
-        key = 'S',
-        command = { 'spawn', string.format([['%s/rofi_screenshot']], script_dir) },
-      },
-
-      -- Wofi
+      -- lets try out wofi instead of rofi
+      ---- Rofi
       --{
       --  mod = 'Super',
       --  key = 'D',
-      --  command = { 'spawn', string.format([['%s/wofi_menu']], script_dir) },
+      --  command = { 'spawn', string.format([['%s/rofi_launcher']], script_dir) },
+      --},
+      --{
+      --  mod = 'Super',
+      --  key = 'B',
+      --  command = { 'spawn', string.format([['%s/rofi_bluetooth']], script_dir) },
       --},
       --{
       --  mod = 'Super',
       --  key = 'X',
-      --  command = { 'spawn', string.format([['%s/wofi_powermenu']], script_dir) },
+      --  command = { 'spawn', string.format([['%s/rofi_powermenu']], script_dir) },
       --},
-      
-      -- Misc
+      --{
+      --  mod = 'Super',
+      --  key = 'M',
+      --  command = { 'spawn', string.format([['%s/rofi_music']], script_dir) },
+      --},
       --{
       --  mod = 'Super',
       --  key = 'N',
-      --  command = { 'spawn', [['nm-connection-editor']] },
+      --  command = { 'spawn', string.format([['%s/rofi_network']], script_dir) },
       --},
+      --{
+      --  mod = 'Super',
+      --  key = 'R',
+      --  command = { 'spawn', string.format([['%s/rofi_runner']], script_dir) },
+      --},
+      --{
+      --  mod = 'Super',
+      --  key = 'S',
+      --  command = { 'spawn', string.format([['%s/rofi_screenshot']], script_dir) },
+      --},
+
+      -- Wofi
+      {
+        mod = 'Super',
+        key = 'Space',
+        command = { 'spawn', string.format([['%s/wofi_menu']], script_dir) },
+      },
+      {
+        mod = 'Super',
+        key = 'X',
+        command = { 'spawn', string.format([['%s/wofi_powermenu']], script_dir) },
+      },
+      
+      -- Misc
+      {
+        mod = 'Super',
+        key = 'N',
+        command = { 'spawn', [['nm-connection-editor']] },
+      },
       {
         mod = 'Super',
         key = 'P',
@@ -337,18 +341,20 @@ local mappings = {
         key = 'Print',
         command = { 'spawn', string.format([['%s/screenshot --now']], script_dir) },
       },
-      {
-        mod = 'Alt',
-        key = 'Print',
-        command = { 'spawn', string.format([['%s/screenshot --in5']], script_dir) },
-      },
+      -- no need for this tbh
+      --{
+      --  mod = 'Alt',
+      --  key = 'Print',
+      --  command = { 'spawn', string.format([['%s/screenshot --in5']], script_dir) },
+      --},
+      -- no need for this either 
+      --{
+      --  mod = 'Shift',
+      --  key = 'Print',
+      --  command = { 'spawn', string.format([['%s/screenshot --in10']], script_dir) },
+      --},
       {
         mod = 'Shift',
-        key = 'Print',
-        command = { 'spawn', string.format([['%s/screenshot --in10']], script_dir) },
-      },
-      {
-        mod = 'Super',
         key = 'Print',
         command = { 'spawn', string.format([['%s/screenshot --area']], script_dir) },
       },
@@ -365,50 +371,73 @@ local mappings = {
         command = 'close',
       },
 
-      -- Super+{<-,->} to focus next/previous view in the layout stack
+      -- Super+{H,L} to focus next/previous view in the layout stack
       {
         mod = 'Super',
-        key = 'Left',
+        key = 'H',
         command = { 'focus-view', 'previous' },
       },
       {
         mod = 'Super',
-        key = 'Right',
+        key = 'L',
         command = { 'focus-view', 'next' },
       },
+      ---- Super+{<-,->} to focus next/previous view in the layout stack
+      --{
+      --  mod = 'Super',
+      --  key = 'Left',
+      --  command = { 'focus-view', 'previous' },
+      --},
+      --{
+      --  mod = 'Super',
+      --  key = 'Right',
+      --  command = { 'focus-view', 'next' },
+      --},
 
-      -- Super+Shift+{<-,->} to swap focused view with the next/previous view in the layout stack
+      -- Super+Shift+{H,L} to swap focused view with the next/previous view in the layout stack
       {
         mod = { 'Super', 'Shift' },
-        key = 'Left',
+        key = 'H',
         command = { 'swap', 'previous' },
       },
       {
         mod = { 'Super', 'Shift' },
-        key = 'Right',
+        key = 'L',
         command = { 'swap', 'next' },
       },
 
+      ---- Super+Shift+{<-,->} to swap focused view with the next/previous view in the layout stack
+      --{
+      --  mod = { 'Super', 'Shift' },
+      --  key = 'Left',
+      --  command = { 'swap', 'previous' },
+      --},
+      --{
+      --  mod = { 'Super', 'Shift' },
+      --  key = 'Right',
+      --  command = { 'swap', 'next' },
+      --},
+
       -- Super+{J,K} to focus next/previous output
       {
-        mod = 'Super',
+        mod = { 'Super', 'Alt' },
         key = 'J',
         command = { 'focus-output', 'previous' },
       },
       {
-        mod = 'Super',
+        mod = { 'Super', 'Alt' },
         key = 'K',
         command = { 'focus-output', 'next' },
       },
 
       -- Super+Shift+{J,K} to send the focused view to next/previous output
       {
-        mod = { 'Super', 'Shift' },
+        mod = { 'Super', 'Shift', 'Alt' },
         key = 'J',
         command = { 'send-to-output', 'previous' },
       },
       {
-        mod = { 'Super', 'Shift' },
+        mod = { 'Super', 'Shift', 'Alt' },
         key = 'K',
         command = { 'send-to-output', 'next' },
       },
@@ -420,49 +449,61 @@ local mappings = {
         command = 'zoom',
       },
 
-      -- Super+{H,L} to decrease/increase the main_factor value of rivertile by 0.02
+      -- Super+{<-,->} to decrease/increase the main_factor value of rivertile by 0.02
       {
         mod = 'Super',
-        key = 'H',
+        key = 'Left',
         command = { 'send-layout-cmd', 'rivertile', [['main-ratio -0.02']] },
       },
       {
         mod = 'Super',
-        key = 'L',
+        key = 'Right',
         command = { 'send-layout-cmd', 'rivertile', [['main-ratio +0.02']] },
       },
 
+      ---- Super+{H,L} to decrease/increase the main_factor value of rivertile by 0.02
+      --{
+      --  mod = 'Super',
+      --  key = 'H',
+      --  command = { 'send-layout-cmd', 'rivertile', [['main-ratio -0.02']] },
+      --},
+      --{
+      --  mod = 'Super',
+      --  key = 'L',
+      --  command = { 'send-layout-cmd', 'rivertile', [['main-ratio +0.02']] },
+      --},
+
       -- Super+Shift+{H,L} to increment/decrement the main_count value of rivertile
       {
-        mod = { 'Super', 'Shift' },
-        key = 'H',
+        mod =  'Super',
+        key = 'K',
         command = { 'send-layout-cmd', 'rivertile', [['main-count +1']] },
       },
       {
-        mod = { 'Super', 'Shift' },
-        key = 'L',
+        mod = 'Super',
+        key = 'J',
         command = { 'send-layout-cmd', 'rivertile', [['main-count -1']] },
       },
 
       -- Control+Alt+{<-,down,up,->} to change layout orientation
       {
-        mod = { 'Control', 'Alt' },
-        key = 'Left',
+        mod = { 'Control', 'Super' },
+        key = 'H',
         command = { 'send-layout-cmd', 'rivertile', [['main-location left']] },
       },
       {
-        mod = { 'Control', 'Alt' },
-        key = 'Down',
+        mod = { 'Control', 'Super' },
+        key = 'J',
         command = { 'send-layout-cmd', 'rivertile', [['main-location bottom']] },
       },
       {
-        mod = { 'Control', 'Alt' },
-        key = 'Up',
+        mod = { 'Control', 'Super' },
+        key = 'K',
         command = { 'send-layout-cmd', 'rivertile', [['main-location top']] },
       },
       {
-        mod = { 'Control', 'Alt' },
-        key = 'Right',
+        mod = { 'Control', 'Super' },
+        key = 'L',
         command = { 'send-layout-cmd', 'rivertile', [['main-location right']] },
       },
 
@@ -494,25 +535,25 @@ local mappings = {
 
       -- Super+Control+{<-,down,up,->} to resize views
       {
-        mod = { 'Super', 'Control' },
+        mod = { 'Super', 'Control', 'Alt' },
         key = 'Left',
         command = { 'resize', 'horizontal', -50 },
         opt = 'repeat',
       },
       {
-        mod = { 'Super', 'Control' },
+        mod = { 'Super', 'Control', 'Alt' },
         key = 'Down',
         command = { 'resize', 'vertical', 50 },
         opt = 'repeat',
       },
       {
-        mod = { 'Super', 'Control' },
+        mod = { 'Super', 'Control', 'Alt' },
         key = 'Up',
         command = { 'resize', 'vertical', -50 },
         opt = 'repeat',
       },
       {
-        mod = { 'Super', 'Control' },
+        mod = { 'Super', 'Control', 'Alt' },
         key = 'Right',
         command = { 'resize', 'horizontal', 50 },
         opt = 'repeat',
@@ -540,16 +581,16 @@ local mappings = {
         command = { 'snap', 'right' },
       },
 
-      -- Super+Space to toggle float
+      -- Super+F to toggle float
       {
         mod = 'Super',
-        key = 'Space',
+        key = 'F',
         command = 'toggle-float',
       },
 
-      -- Super+F to toggle fullscreen
+      -- Super+Shift+F to toggle fullscreen
       {
-        mod = 'Super',
+        mod = { 'Super', 'Shift' },
         key = 'F',
         command = 'toggle-fullscreen',
       },
@@ -620,23 +661,24 @@ local mappings = {
 
 -- Mouse Mappings ──────────────────────────────────────────────────────────────
 
-  -- Mappings for pointer (mouse)
-  ['map-pointer'] = {
-    normal = {
-      -- Super + Left Mouse Button to move views
-      {
-        mod = 'Super',
-        key = 'BTN_LEFT',
-        command = 'move-view',
-      },
-      -- Super + Right Mouse Button to resize views
-      {
-        mod = 'Super',
-        key = 'BTN_RIGHT',
-        command = 'resize-view',
-      },
-    },
-  },
+  -- I don't have a need for mouse stuff
+  ---- Mappings for pointer (mouse)
+  --['map-pointer'] = {
+  --  normal = {
+  --    -- Super + Left Mouse Button to move views
+  --    {
+  --      mod = 'Super',
+  --      key = 'BTN_LEFT',
+  --      command = 'move-view',
+  --    },
+  --    -- Super + Right Mouse Button to resize views
+  --    {
+  --      mod = 'Super',
+  --      key = 'BTN_RIGHT',
+  --      command = 'resize-view',
+  --    },
+  --  },
+  --},
 }
 
 -- Workspaces / Tags ───────────────────────────────────────────────────────────

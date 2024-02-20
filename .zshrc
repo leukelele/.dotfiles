@@ -117,6 +117,10 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
+# set vim as editor
+export EDITOR=vim
+export VISUAL="$EDITOR"
+
 # omz
 alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"

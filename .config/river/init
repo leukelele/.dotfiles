@@ -59,11 +59,11 @@ local startup_commands = {
 
 -- Using `wlr-randr` for managing outputs.
 local outputs = {
-  ['*'] = {
-    mode = '1920x1080',
+  ['eDP-1'] = {
+    mode = '2880x1800',
     pos = '0,0',
     transform = 'normal',
-    scale = '1.000000',
+    scale = '1.500000',
     preferred = true,
   },
 -- Laptop screen, mode: 1920x1080, scale: 1
@@ -88,15 +88,15 @@ local outputs = {
 
 -- Use `riverctl list-inputs` cmd to list all the available devices and their names.
 local inputs = {
-  ['pointer-1267-12533-ELAN2204:00_04F3:30F5_Touchpad'] = {
+  ['pointer-1267-12799-ELAN0303:00_04F3:31FF_Touchpad'] = {
     ['events'] = 'disabled-on-external-mouse',
-    ['accel-profile'] = 'adaptive',
-    ['pointer-accel'] = '1.0',
+    ['accel-profile'] = 'flat',
+    ['pointer-accel'] = '0.4',
     ['drag'] = 'enabled',
     ['tap'] = 'enabled',
     ['tap-button-map'] = 'left-right-middle',
     ['disable-while-typing'] = 'enabled',
-    ['natural-scroll'] = 'disabled',
+    ['natural-scroll'] = 'enabled',
     ['scroll-method'] = 'two-finger',
   },
 }
@@ -115,7 +115,7 @@ local river_options = {
   ['border-color-focused'] = focused_border,
   ['border-color-unfocused'] = unfocused_border,
   ['border-color-urgent'] = urgent_border,
-  ['xcursor-theme'] = { 'Qogirr', 16 },
+  ['xcursor-theme'] = { 'Qogirr', 36 },
   --['background-color'] = background_color,
 
   -- Other options

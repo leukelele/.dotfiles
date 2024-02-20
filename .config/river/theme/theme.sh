@@ -11,7 +11,7 @@ DIR="$HOME/.config/river"
 PATH_ALAC="$DIR/alacritty"
 PATH_FOOT="$DIR/foot"
 PATH_MAKO="$DIR/mako"
-PATH_ROFI="$DIR/rofi"
+#PATH_ROFI="$DIR/rofi"
 PATH_WAYB="$DIR/waybar"
 PATH_WOFI="$DIR/wofi"
 
@@ -56,7 +56,7 @@ source_pywal() {
 	}
 
 	# Run `pywal` to generate colors
-	generate_colors() {	
+	generate_colors() {
 		check_wallpaper
 		if [[ `which wal` ]]; then
 			notify-send -t 50000 -h string:x-canonical-private-synchronous:sys-notify-runpywal -i ${PATH_MAKO}/icons/timer.png "Generating Colorscheme. Please wait..."
@@ -93,7 +93,7 @@ apply_alacritty() {
 		[colors.primary]
 		background = "${background}"
 		foreground = "${foreground}"
-		
+
 		[colors.normal]
 		black   = "${color0}"
 		red     = "${color1}"
@@ -103,7 +103,7 @@ apply_alacritty() {
 		magenta = "${color5}"
 		cyan    = "${color6}"
 		white   = "${color7}"
-		
+
 		[colors.bright]
 		black   = "${color8}"
 		red     = "${color9}"
@@ -215,7 +215,7 @@ apply_waybar() {
 
 ## Wofi --------------------------------------
 apply_wofi() {
-	# wofi : colors	
+	# wofi : colors
 	sed -i ${PATH_WOFI}/style.css ${PATH_WOFI}/power.css \
 		-e "s/@define-color background .*/@define-color background     ${background};/g" \
 		-e "s/@define-color background-alt .*/@define-color background-alt ${altbackground};/g" \
@@ -239,7 +239,7 @@ apply_river() {
 		-e "s/focused_border =.*/focused_border = '0x${accent:1}'/g" \
 		-e "s/unfocused_border =.*/unfocused_border = '0x${altbackground:1}'/g" \
 		-e "s/urgent_border =.*/urgent_border = '0x${color1:1}'/g"
-	
+
 	# reload river config
 	riverctl border-color-focused 0x${accent:1}
 	riverctl border-color-unfocused 0x${altbackground:1}

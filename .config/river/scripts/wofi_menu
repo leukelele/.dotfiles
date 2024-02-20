@@ -8,7 +8,7 @@ CONFIG="$HOME/.config/river/wofi/config"
 STYLE="$HOME/.config/river/wofi/style.css"
 
 if [[ ! `pidof wofi` ]]; then
-	wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE}
+	wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --location=0
 else
 	pkill wofi
 fi

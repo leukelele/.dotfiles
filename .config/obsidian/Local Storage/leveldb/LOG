@@ -1,0 +1,6 @@
+2024/02/29-16:08:01.776 69e8 Reusing MANIFEST /home/leuk/.config/obsidian/Local Storage/leveldb/MANIFEST-000001
+2024/02/29-16:08:01.782 69e8 Recovering log #3
+2024/02/29-16:08:01.783 69e8 Reusing old log /home/leuk/.config/obsidian/Local Storage/leveldb/000003.log 
+2024/03/01-08:35:33.527 69e8 Level-0 table #5: started
+2024/03/01-08:35:33.542 69e8 Level-0 table #5: 7864 bytes OK
+2024/03/01-08:35:33.549 69e8 Delete type=0 #3

@@ -9,7 +9,6 @@
 
 filetype plugin indent on   "allow auto-indenting depending on file type
 
-" ==========================================================================
 " esc in insert & visual mode
 inoremap kj <esc>
 vnoremap kj <esc>
@@ -19,7 +18,6 @@ cnoremap kj <C-C>
 " Note: In command mode mappings to esc run the command for some odd
 " historical vi compatibility reason. We use the alternate method of
 " exiting which is Ctrl-C
-" ==========================================================================
 
 set autoindent              " indent a new line the same amount as the line just typed
 " set backupdir=~/.cache/vim " Directory to store backup files.

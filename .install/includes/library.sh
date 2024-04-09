@@ -12,6 +12,8 @@
 # ------------------------------------------------------
 # Function: Is package installed
 # ------------------------------------------------------
+
+# [ ]
 _isInstalledPacman() {
     package="$1";
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
@@ -23,6 +25,7 @@ _isInstalledPacman() {
     return; #false
 }
 
+# [ ]
 _isInstalledYay() {
     package="$1";
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "\." | grep "${package} ")";
@@ -34,6 +37,7 @@ _isInstalledYay() {
     return; #false
 }
 
+# [ ]
 _isFolderEmpty() {
     folder="$1"
     if [ -d $folder ] ;then
@@ -50,6 +54,7 @@ _isFolderEmpty() {
 # ------------------------------------------------------
 # Function Install all package if not installed
 # ------------------------------------------------------
+# [x]
 _installPackagesPacman() {
     toInstall=();
     for pkg; do
@@ -69,6 +74,7 @@ _installPackagesPacman() {
     sudo pacman --noconfirm -S "${toInstall[@]}";
 }
 
+# [ ]
 _forcePackagesPacman() {
     toInstall=();
     for pkg; do
@@ -84,6 +90,7 @@ _forcePackagesPacman() {
     sudo pacman --noconfirm -S "${toInstall[@]}" --ask 4;
 }
 
+# [ ]
 _installPackagesYay() {
     toInstall=();
     for pkg; do
@@ -103,6 +110,7 @@ _installPackagesYay() {
     yay --noconfirm -S "${toInstall[@]}";
 }
 
+# [ ]
 _forcePackagesYay() {
     toInstall=();
     for pkg; do
@@ -121,6 +129,7 @@ _forcePackagesYay() {
 # ------------------------------------------------------
 # Create symbolic links
 # ------------------------------------------------------
+# [ ]
 _installSymLink() {
     name="$1"
     symlink="$2";
@@ -152,6 +161,7 @@ _installSymLink() {
 # ------------------------------------------------------
 # Installation in a KVM Virtual Machine
 # ------------------------------------------------------
+# [ ]
 _isKVM() {
     iskvm=$(sudo dmesg | grep "Hypervisor detected")
     if [[ "$iskvm" =~ "KVM" ]] ;then
@@ -161,6 +171,7 @@ _isKVM() {
     fi
 }
 
+# [ ]
 # _replaceInFile $startMarket $endMarker $customtext $targetFile
 _replaceInFile() {
 
@@ -232,6 +243,7 @@ _replaceInFile() {
 }
 
 # replaceLineInFile $findText $customtext $targetFile
+# [ ]
 _replaceLineInFile() {
    # Set function parameters
     find_string="$1"

@@ -27,4 +27,16 @@ echo "Version: $version"
 echo "by Stephan Raabe (modified by Luke Le) 2024"
 echo ""
 
+if [ -d ~/.dotfiles ] ;then
+    echo "A .dotfiles installation has been detected."
+    echo "This script will guide you through the update process of the .dotfiles."
+else
+    echo "This script will guide you through the installation process of the .dotfiles."
+fi
+echo ""
 
+source .install/required.sh
+source .install/confirm-start.sh
+source .install/yay.sh
+source .install/updatesystem.sh
+source .install/backup.sh

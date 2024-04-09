@@ -2,7 +2,7 @@
 ## pacman
 - [ ] brightnessctl
 - [ ] qtile
-- [ ] gnome-settings-daemon
+- [ ] gnome-settings-daemon     (integrate plasma to gtk app)
 - [ ] gsettings-desktop-schemas
 - [ ] gsettings-qt
 - [ ] python-dbus-next  (don't know what this is for)
@@ -20,9 +20,11 @@
 - [ ] mako
 - [ ] nemo
 - [ ] starship
+- [ ] tmux
 
 ## yay
 - [ ] kanshi
+- [ ] qtile-extras
 - [ ] wlr-randr
 
 - [ ] discord

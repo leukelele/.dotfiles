@@ -136,7 +136,7 @@ groups = [Group(i, layout="monadtall") for i in "1234567890"]
 dgroups_key_binder = simple_key_binder(mod)
 
 # --------------------------------------------------------
-# Groups
+# Layouts
 # --------------------------------------------------------
 
 layouts = [
@@ -154,6 +154,16 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
+
+# Drag floating layouts.
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front()),
+]
+# --------------------------------------------------------
+# Widgets
+# --------------------------------------------------------
 
 widget_defaults = dict(
     font="sans",
@@ -193,13 +203,6 @@ screens = [
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
     ),
-]
-
-# Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
 # --------------------------------------------------------

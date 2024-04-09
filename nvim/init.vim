@@ -41,6 +41,7 @@ set softtabstop=2           " see multiple spaces as tabstops so <BS> does the r
 set tabstop=2               " number of columns occupied by a tab 
 set timeoutlen=500          " shorten delay for when typing 'k'
 set ttyfast                 " Speed up scrolling in Vim
+set undofile                " persistent history for undo
 set wildmode=longest,list   " get bash-like tab completions
 syntax on                   " syntax highlighting
 filetype plugin on

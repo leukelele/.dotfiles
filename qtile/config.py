@@ -41,7 +41,6 @@ from libqtile.backend.wayland import InputConfig
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.dgroups import simple_key_binder
 from libqtile.lazy import lazy
-from libqtile.widget import backlight
 
 # --------------------------------------------------------
 # Defaults
@@ -192,6 +191,7 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Battery(format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W'),
                 widget.QuickExit(),
             ],
             24,

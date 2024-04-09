@@ -1,25 +1,30 @@
 # todo
 ## pacman
+- [ ] brightnessctl
 - [ ] qtile
-- [ ] python-dbus-next (don't know what this is for)
-- [ ] python-iwlib (maybe need this?)
-- [ ] python-pywayland (don't know what this is for)
-- [ ] python-pywlroots (layer for python to communicate with wlroots)
-- [ ] wlroots
-- [ ] neovim
 - [ ] gnome-settings-daemon
 - [ ] gsettings-desktop-schemas
 - [ ] gsettings-qt
-- [ ] brightnessctl
+- [ ] python-dbus-next  (don't know what this is for)
+- [ ] python-psutil     (grab sys utils and processes)
+- [ ] python-pywal      (get most prominant colors)
+- [ ] python-pywayland  (provide python bindings to wayland)
+- [ ] python-pywlroots  (layer for python to communicate with pywayland)
+- [ ] xorg-xwayland
+- [ ] wlroots
+
+- [ ] alacritty
+- [ ] keepassxc
+- [ ] neovim
 - [ ] wl-clipboard
+- [ ] mako
 - [ ] nemo
-- [ ] python-pip
-- [ ] python-psutil
-- [ ] python-rich (idk if I need this)
-- [ ] python-click (idk if I need this)
+- [ ] starship
 
 ## yay
-- [ ] wlr-randr
 - [ ] kanshi
+- [ ] wlr-randr
+
+- [ ] discord
 - [ ] obsidian
-- [ ] qtile-extras (idk if I need this)
+- [ ] pfetch-rs

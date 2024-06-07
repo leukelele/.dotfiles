@@ -139,8 +139,8 @@ dgroups_key_binder = simple_key_binder(mod)
 # --------------------------------------------------------
 
 layouts = [
-    layout.MonadTall(),
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.MonadTall(),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -173,7 +173,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
@@ -252,6 +252,6 @@ wmname = "LG3D"
 # HOOK startup
 @hook.subscribe.startup_once
 def autostart():
-    autostartscript = "autostart.sh"
+    autostartscript = "/autostart.sh"
     home = os.path.expanduser(current_dir + autostartscript)
     subprocess.Popen([home])

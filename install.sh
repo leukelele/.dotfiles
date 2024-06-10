@@ -12,6 +12,7 @@ if [ ! -z $1 ]; then
     echo "Existing dotfiles folder will not be modified."
     echo "Symbolic links will not be created."
 fi
+
 echo -e "${GREEN}"
 cat <<"EOF"
          _       _    __ _ _           
@@ -39,4 +40,3 @@ source .install/required.sh
 source .install/confirm-start.sh
 source .install/yay.sh
 source .install/updatesystem.sh
-source .install/backup.sh

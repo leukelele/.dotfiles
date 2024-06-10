@@ -6,14 +6,13 @@
 # |_____|_|_.__/|_|  \__,_|_|   \__, | 
 #                               |___/  
 #  
-# by Stephan Raabe (2023) 
+# by Stephan Raabe, modified by Luke Le (2024)
 # ----------------------------------------------------- 
 
-# ------------------------------------------------------
-# Function: Is package installed
-# ------------------------------------------------------
-
-# [ ]
+# --------------------------------------------------------
+# Function: check if package is installed w pacman/yay
+# --------------------------------------------------------
+# - [ ]
 _isInstalledPacman() {
     package="$1";
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
@@ -25,7 +24,6 @@ _isInstalledPacman() {
     return; #false
 }
 
-# [ ]
 _isInstalledYay() {
     package="$1";
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "\." | grep "${package} ")";
@@ -37,6 +35,9 @@ _isInstalledYay() {
     return; #false
 }
 
+# --------------------------------------------------------
+# Function: check if folder is empty
+# --------------------------------------------------------
 # [ ]
 _isFolderEmpty() {
     folder="$1"
@@ -51,9 +52,10 @@ _isFolderEmpty() {
     fi
 }
 
-# ------------------------------------------------------
-# Function Install all package if not installed
-# ------------------------------------------------------
+# --------------------------------------------------------
+# Function: install package using pacman/yay; variation 
+# that forces installation
+# --------------------------------------------------------
 # [x]
 _installPackagesPacman() {
     toInstall=();
@@ -124,6 +126,19 @@ _forcePackagesYay() {
 
     # printf "AUR packags not installed:\n%s\n" "${toInstall[@]}";
     yay --noconfirm -S "${toInstall[@]}" --ask 4;
+}
+
+# --------------------------------------------------------
+# Function: remove package using pacman
+# --------------------------------------------------------
+_uninstallPackagesPacman() {
+  package="$1"
+  if _isInstalledPacman "${package}"; then
+    sudo pacman --noconfirm -Rns "${package}"
+    echo "${package} has been uninstalled."
+  else
+    echo "${package} does not exist."
+  fi
 }
 
 # ------------------------------------------------------

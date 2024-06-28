@@ -1,0 +1,12 @@
+{
+  "image.nvim": { "branch": "master", "commit": "bdd5506be7fb39668692e30141f1637b691379af" },
+  "lazy.nvim": { "branch": "main", "commit": "bc620783663ab09d16bff9fdecc07da65b2a1528" },
+  "neoconf.nvim": { "branch": "main", "commit": "4aa5753825c6f39ff7d84defc0717ef842b1861d" },
+  "neodev.nvim": { "branch": "main", "commit": "02893eeb9d6e8503817bd52385e111cba9a90500" },
+  "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
+  "nvim-treesitter": { "branch": "master", "commit": "122b4d3db1616c1f1305b847c5ed2217c4c329f1" },
+  "obsidian.nvim": { "branch": "main", "commit": "7507dee26f18610d5f928ff2b7e5fcb658074e52" },
+  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
+  "which-key.nvim": { "branch": "main", "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0" }
+}

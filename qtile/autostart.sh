@@ -10,9 +10,12 @@
 # by Stephan Raabe (modified by Luke Le) 2024
 # ----------------------------------------------------- 
 
-# My screen resolution
+# Readjusts to laptop resolution
 pkill -f kanshi
 kanshi &
+
+# Network manager applet
+run nm-applet &
 
 # For Virtual Machine 
 # xrandr --output Virtual-1 --mode 1920x1080

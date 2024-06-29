@@ -1,32 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-#
-# A list of available commands that can be bound to keys can be found
-# at https://docs.qtile.org/en/latest/manual/config/lazy.html
-
 #   ___ _____ ___ _     _____    ____             __ _       
 #  / _ \_   _|_ _| |   | ____|  / ___|___  _ __  / _(_) __ _ 
 # | | | || |  | || |   |  _|   | |   / _ \| '_ \| |_| |/ _` |
@@ -130,13 +101,6 @@ for vt in range(1, 8):
     )
 
 # --------------------------------------------------------
-# Groups
-# --------------------------------------------------------
-
-groups = [Group(i, layout="columns") for i in "1234567890"]
-dgroups_key_binder = simple_key_binder(mod)
-
-# --------------------------------------------------------
 # Layouts
 # --------------------------------------------------------
 
@@ -156,49 +120,115 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-# Drag floating layouts.
+# Drag floating layouts
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button2", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button3", lazy.window.bring_to_front()),
 ]
+
+# Establish floating rules
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),  # gitk
+        Match(wm_class="makebranch"),  # gitk
+        Match(wm_class="maketag"),  # gitk
+        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(title="branchdialog"),  # gitk
+        Match(title="pinentry"),  # GPG key password entry
+    ]
+)
+
+floats_kept_above = True
+
+# --------------------------------------------------------
+# Groups
+# --------------------------------------------------------
+
+groups = [Group(i, layout="columns") for i in "1234567890"]
+dgroups_key_binder = simple_key_binder(mod)
+
 # --------------------------------------------------------
 # Widgets
 # --------------------------------------------------------
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
+    font="JetBrainsMono Nerd Font",
+    fontsize=14,
     padding=3,
 )
+
 extension_defaults = widget_defaults.copy()
+
+seperator = [
+        widget.Spacer(length=4),
+        widget.TextBox(text="|", fontsize=18, foreground="#343434"),
+        widget.Spacer(length=4),
+]
+
+widgets = [
+        widget.Spacer(length=5),
+        widget.CurrentLayoutIcon(scale=0.60),
+        seperator,
+        widget.GroupBox(
+            active="#ffffff", 
+            borderwidth=2, 
+            inactive="#a6a6a6", 
+            margin_x=2, 
+            this_current_screen_border="#bb9af7"
+        ),
+        seperator,
+        widget.WindowName(
+            max_chars=40, 
+            foreground="#9cbafe",
+            #foreground="#ffb680"
+        ),
+
+        widget.Volume(foreground="#b6ffb4"),
+        seperator,
+        widget.Backlight(
+            brightness_file="/sys/class/backlight/intel_backlight/brightness", 
+            foreground="#8effdd",
+            max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", 
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, 
+            fmt="{}"),
+        seperator,
+        widget.Battery(
+            foreground="#ff8e8e",
+            format='{char} {percent:2.0%} {hour:d}:{min:02d}'
+        ),
+        seperator,
+        widget.Clock(
+            foreground="#bb9af7",
+            format="%H:%M"
+        ),
+        seperator,
+        widget.Clock(format="%a %d-%m-%y"),
+        widget.Spacer(length=8),
+]
+
+def flatten(L):
+    for item in L:
+        try:
+            yield from flatten(item)
+        except TypeError:
+            yield item
+widget_list = list(flatten(widgets))
+
+# --------------------------------------------------------
+# Screens
+# --------------------------------------------------------
 
 screens = [
     Screen(
         wallpaper = "~/.cache/wallpaper/pixel-art.png", 
         wallpaper_mode = 'fill',
         top = bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-#                widget.TextBox("default config", name="default"),
-#                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.Battery(format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W'),
-                widget.QuickExit(),
-            ],
-            24,
+            widget_list,
+            30,
+            margin=5
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -216,20 +246,7 @@ screens = [
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
-floats_kept_above = True
 cursor_warp = False
-floating_layout = layout.Floating(
-    float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-    ]
-)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True

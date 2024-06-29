@@ -175,7 +175,9 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        top=bar.Bar(
+        wallpaper = "~/.cache/wallpaper/pixel-art.png", 
+        wallpaper_mode = 'fill',
+        top = bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),

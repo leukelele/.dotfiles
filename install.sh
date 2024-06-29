@@ -37,6 +37,6 @@ fi
 echo ""
 
 source .install/required.sh
+source .install/paru.sh
 source .install/confirm-start.sh
-source .install/yay.sh
 source .install/updatesystem.sh

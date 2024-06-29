@@ -1,6 +1,6 @@
 {
   "image.nvim": { "branch": "master", "commit": "bdd5506be7fb39668692e30141f1637b691379af" },
-  "lazy.nvim": { "branch": "main", "commit": "bc620783663ab09d16bff9fdecc07da65b2a1528" },
+  "lazy.nvim": { "branch": "main", "commit": "ec95702ae617308df35f35ad93c469c86d47346f" },
   "neoconf.nvim": { "branch": "main", "commit": "4aa5753825c6f39ff7d84defc0717ef842b1861d" },
   "neodev.nvim": { "branch": "main", "commit": "02893eeb9d6e8503817bd52385e111cba9a90500" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },

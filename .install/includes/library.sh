@@ -10,7 +10,7 @@
 # ----------------------------------------------------- 
 
 # --------------------------------------------------------
-# Function: check if package is installed w pacman/yay
+# Function: check if package is installed w pacman/paru
 # --------------------------------------------------------
 # - [ ]
 _isInstalledPacman() {
@@ -24,9 +24,9 @@ _isInstalledPacman() {
     return; #false
 }
 
-_isInstalledYay() {
+_isInstalledParu() {
     package="$1";
-    check="$(yay -Qs --color always "${package}" | grep "local" | grep "\." | grep "${package} ")";
+    check="$(paru -Qs --color always "${package}" | grep "local" | grep "\." | grep "${package} ")";
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
@@ -53,7 +53,7 @@ _isFolderEmpty() {
 }
 
 # --------------------------------------------------------
-# Function: install package using pacman/yay; variation 
+# Function: install package using pacman/paru; variation 
 # that forces installation
 # --------------------------------------------------------
 # [x]
@@ -93,10 +93,10 @@ _forcePackagesPacman() {
 }
 
 # [ ]
-_installPackagesYay() {
+_installPackagesParu() {
     toInstall=();
     for pkg; do
-        if [[ $(_isInstalledYay "${pkg}") == 0 ]]; then
+        if [[ $(_isInstalledParu "${pkg}") == 0 ]]; then
             echo ":: ${pkg} is already installed.";
             continue;
         fi;
@@ -109,11 +109,11 @@ _installPackagesYay() {
     fi;
 
     # printf "AUR packags not installed:\n%s\n" "${toInstall[@]}";
-    yay --noconfirm -S "${toInstall[@]}";
+    paru --noconfirm -S "${toInstall[@]}";
 }
 
 # [ ]
-_forcePackagesYay() {
+_forcePackagesParu() {
     toInstall=();
     for pkg; do
         toInstall+=("${pkg}");
@@ -125,7 +125,7 @@ _forcePackagesYay() {
     fi;
 
     # printf "AUR packags not installed:\n%s\n" "${toInstall[@]}";
-    yay --noconfirm -S "${toInstall[@]}" --ask 4;
+    paru --noconfirm -S "${toInstall[@]}" --ask 4;
 }
 
 # --------------------------------------------------------

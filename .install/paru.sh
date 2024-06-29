@@ -1,21 +1,21 @@
 # ------------------------------------------------------
-# Check if yay is installed
+# Check if paru is installed
 # ------------------------------------------------------
 echo -e "${GREEN}"
-figlet "yay"
+figlet "paru"
 echo -e "${NONE}"
-if sudo pacman -Qs yay > /dev/null ; then
-    echo ":: yay is already installed!"
+if sudo pacman -Qs paru > /dev/null ; then
+    echo ":: paru is already installed!"
 else
-    echo ":: yay is not installed. Starting the installation!"
+    echo ":: paru is not installed. Starting the installation!"
     _installPackagesPacman "base-devel"
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
     echo $temp_path
-    git clone https://aur.archlinux.org/yay-git.git ~/yay-git
-    cd ~/yay-git
+    git clone https://aur.archlinux.org/paru.git ~/paru-git
+    cd ~/paru-git
     makepkg -si
     cd $temp_path
-    echo ":: yay has been installed successfully."
+    echo ":: paru has been installed successfully."
 fi
 echo ""

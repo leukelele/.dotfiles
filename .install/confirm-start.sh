@@ -2,6 +2,7 @@
 # Confirm Start
 # ------------------------------------------------------
 
+# Warning for if dotfiles are placed in the home directory
 echo "You can cancel the installation at any time with CTRL + C"
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
@@ -14,6 +15,8 @@ if [ $SCRIPTPATH = "/home/$USER/.dotfiles" ]; then
         exit
     fi
 fi
+
+# Confirmation for proceeding with installation script
 if [ ! -d ~/.dotfiles ];then
     if gum confirm "DO YOU WANT TO START THE INSTALLATION OF THE .DOTFILES NOW?" ;then
         echo "Installation started."

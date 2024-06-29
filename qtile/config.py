@@ -35,7 +35,9 @@
 #                                                      |___/ 
 # Icons: https://fontawesome.com/search?o=r&m=free
 
-import os
+from os import getcwd
+from os.path import expanduser
+from subprocess import Popen
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.backend.wayland import InputConfig
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
@@ -46,11 +48,11 @@ from libqtile.lazy import lazy
 # Defaults
 # --------------------------------------------------------
 
-browser = "firefox"
-file_manager = "nemo"
 terminal = "alacritty"
+browser = "firefox"
+#file_manager = "nemo"
 
-current_dir = os.getcwd()
+current_dir = getcwd()
 
 # --------------------------------------------------------
 # Keybindings
@@ -78,7 +80,7 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod, "control"], "r", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "c", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Float/max focused windows
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
@@ -88,14 +90,14 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, 
     # like Max layout, but still with multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
+    Key([mod], "m", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
 
     # Map buttons for brightness and volumes
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl -q s +5%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl -q s 5%-")),
-#    Key([], "XF86AudioLowerVolume", lazy.widget["volume"].decrease_vol()),
-#    Key([], "XF86AudioRaiseVolume", lazy.widget["volume"].increase_vol()),
-#    Key([], "XF86AudioMute", lazy.widget["volume"].mute())
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 5- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 5+ unmute")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -109,7 +111,7 @@ keys = [
     # Apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
-    Key([mod], "n", lazy.spawn(file_manager), desc="Launch File Manager"),
+    # Key([mod], "n", lazy.spawn(file_manager), desc="Launch File Manager"),
 ]
 
 # --------------------------------------------------------
@@ -131,7 +133,7 @@ for vt in range(1, 8):
 # Groups
 # --------------------------------------------------------
 
-groups = [Group(i, layout="monadtall") for i in "1234567890"]
+groups = [Group(i, layout="columns") for i in "1234567890"]
 dgroups_key_binder = simple_key_binder(mod)
 
 # --------------------------------------------------------
@@ -140,13 +142,13 @@ dgroups_key_binder = simple_key_binder(mod)
 
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.MonadTall(),
+    layout.MonadWide(),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
+    # layout.MonadTall(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    layout.Matrix(),
-    layout.MonadWide(),
+    # layout.Matrix(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -157,8 +159,8 @@ layouts = [
 # Drag floating layouts.
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Drag([mod], "Button2", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button3", lazy.window.bring_to_front()),
 ]
 # --------------------------------------------------------
 # Widgets
@@ -252,6 +254,4 @@ wmname = "LG3D"
 # HOOK startup
 @hook.subscribe.startup_once
 def autostart():
-    autostartscript = "/autostart.sh"
-    home = os.path.expanduser(current_dir + autostartscript)
-    subprocess.Popen([home])
+    Popen(expanduser("~/.config/qtile/autostart.sh"))

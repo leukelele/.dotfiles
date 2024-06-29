@@ -28,11 +28,14 @@ unset __conda_setup
 # alias
 #------------------------------------------------------------------------------
 
-# yay -> paru
-alias yay="paru"
+# random note (selects random note from .nb)
+alias rnt='source $HOME/.config/qtile/scripts/random.sh'
 
 # vim -> nvim
 alias vim='nvim'
+
+# yay -> paru
+alias yay="paru"
 
 # w color
 alias grep='grep --color=auto'

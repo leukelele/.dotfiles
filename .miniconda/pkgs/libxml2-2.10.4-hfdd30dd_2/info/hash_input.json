@@ -1,0 +1,10 @@
+{
+  "target_platform": "linux-64",
+  "xz": "5",
+  "c_compiler_version": "11.2.0",
+  "zlib": "1.2",
+  "icu": "73",
+  "VERBOSE_AT": "V=1",
+  "channel_targets": "defaults",
+  "c_compiler": "gcc"
+}

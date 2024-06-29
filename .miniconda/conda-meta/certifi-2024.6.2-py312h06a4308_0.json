@@ -1,0 +1,48 @@
+{
+  "build": "py312h06a4308_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.12,<3.13.0a0"
+  ],
+  "extracted_package_dir": "/home/leukelele/.miniconda/pkgs/certifi-2024.6.2-py312h06a4308_0",
+  "files": [
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/INSTALLER",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/LICENSE",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/METADATA",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/RECORD",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/REQUESTED",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/WHEEL",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/direct_url.json",
+    "lib/python3.12/site-packages/certifi-2024.6.2.dist-info/top_level.txt",
+    "lib/python3.12/site-packages/certifi/__init__.py",
+    "lib/python3.12/site-packages/certifi/__main__.py",
+    "lib/python3.12/site-packages/certifi/__pycache__/__init__.cpython-312.pyc",
+    "lib/python3.12/site-packages/certifi/__pycache__/__main__.cpython-312.pyc",
+    "lib/python3.12/site-packages/certifi/__pycache__/core.cpython-312.pyc",
+    "lib/python3.12/site-packages/certifi/cacert.pem",
+    "lib/python3.12/site-packages/certifi/core.py",
+    "lib/python3.12/site-packages/certifi/py.typed"
+  ],
+  "fn": "certifi-2024.6.2-py312h06a4308_0.conda",
+  "license": "MPL-2.0",
+  "link": {
+    "source": "/home/leukelele/.miniconda/pkgs/certifi-2024.6.2-py312h06a4308_0",
+    "type": 1
+  },
+  "md5": "f471df9a7a2fe55a9e99877de3cd913a",
+  "name": "certifi",
+  "package_tarball_full_path": "/home/leukelele/.miniconda/pkgs/certifi-2024.6.2-py312h06a4308_0.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "defaults/linux-64::certifi==2024.6.2=py312h06a4308_0[md5=f471df9a7a2fe55a9e99877de3cd913a]",
+  "sha256": "c9456d4524b9d35032a649aa662f228eca62b0ed3e4ee78392df3821fcfd2ecb",
+  "size": 164497,
+  "subdir": "linux-64",
+  "timestamp": 1717618094000,
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/certifi-2024.6.2-py312h06a4308_0.conda",
+  "version": "2024.6.2"
+}

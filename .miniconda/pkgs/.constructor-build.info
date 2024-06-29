@@ -1,0 +1,1 @@
+{"constructor": "3.8.0", "conda": "24.5.0", "platform": "linux", "python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]", "python_version": [3, 12, 3, "final", 0], "machine": "x86_64", "platform_full": "#23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024", "extra": ["debian", "12", "bookworm"]}

@@ -188,14 +188,17 @@ widgets = [
             #foreground="#ffb680"
         ),
 
-        widget.Volume(foreground="#b6ffb4"),
+        widget.Volume(
+            foreground="#b6ffb4",
+            fmt="󰕾 {}",
+            ),
         seperator,
         widget.Backlight(
             brightness_file="/sys/class/backlight/intel_backlight/brightness", 
             foreground="#8effdd",
             max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", 
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, 
-            fmt="{}"),
+            fmt="󰛨 {}"),
         seperator,
         widget.Battery(
             foreground="#ff8e8e",

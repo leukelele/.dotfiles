@@ -15,7 +15,7 @@ pkill -f kanshi
 kanshi &
 
 # Network manager applet
-run nm-applet &
+# run nm-applet &
 
 # For Virtual Machine 
 # xrandr --output Virtual-1 --mode 1920x1080

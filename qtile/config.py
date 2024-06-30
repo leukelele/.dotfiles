@@ -72,12 +72,13 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "space", lazy.spawn("fuzzel -I --dpi-aware=no"), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # System controls
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod], "x", lazy.spawn("wlogout -b 2")),
 
     # Apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
@@ -105,9 +106,10 @@ for vt in range(1, 8):
 # --------------------------------------------------------
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.MonadWide(),
-    layout.Max(),
+    #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(margin=5),
+    layout.MonadWide(margin=5),
+    layout.Max(margin=5),
     # Try more layouts by unleashing below layouts.
     # layout.MonadTall(),
     # layout.Stack(num_stacks=2),
@@ -181,7 +183,7 @@ widgets = [
         ),
         seperator,
         widget.WindowName(
-            max_chars=40, 
+            max_chars=30, 
             foreground="#9cbafe",
             #foreground="#ffb680"
         ),

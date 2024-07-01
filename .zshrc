@@ -38,6 +38,7 @@ alias vim='nvim'
 
 # yay -> paru
 alias yay="paru"
+alias yeet-"paru -Rns"
 
 # w color
 alias grep='grep --color=auto'

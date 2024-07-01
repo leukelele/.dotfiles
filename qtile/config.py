@@ -67,8 +67,8 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl -q s +5%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl -q s 5%-")),
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 5- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 5+ unmute")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+ unmute")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -183,9 +183,9 @@ widgets = [
         ),
         seperator,
         widget.WindowName(
-            max_chars=30, 
+            empty_group_string="Nothing going on rn...",
             foreground="#9cbafe",
-            #foreground="#ffb680"
+            max_chars=30, 
         ),
 
         widget.Volume(
@@ -211,7 +211,7 @@ widgets = [
         ),
         seperator,
         widget.Clock(format="%a %d-%m-%y"),
-        widget.Spacer(length=8),
+        widget.Spacer(length=6),
 ]
 
 def flatten(L):
@@ -273,7 +273,7 @@ wl_input_rules = {
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "QTILE"
 
 # HOOK startup
 @hook.subscribe.startup_once

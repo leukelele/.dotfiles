@@ -78,16 +78,15 @@ setopt sharehistory
 # alias
 #------------------------------------------------------------------------------
 
+alias fetch='pfetch'
+
 # random note (selects random note from .nb)
 alias rnt='source $HOME/.config/qtile/scripts/random.sh'
 
-# vim -> nvim
 alias vim='nvim'
 
-# yay -> paru
 alias yay="paru"
 alias yeet-"paru -Rns"
 
-# w color
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'

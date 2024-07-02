@@ -72,7 +72,7 @@ setopt hist_save_no_dups
 setopt sharehistory
 
 # pfetch when terminal
-pfetch
+# pfetch
 
 #------------------------------------------------------------------------------
 # alias

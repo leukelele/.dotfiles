@@ -60,7 +60,8 @@ unset __conda_setup
 # history
 HISTDUP=erase
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000
+HISTFILESIZE=900
+HISTSIZE=900
 SAVEHIST=$HISTSIZE
 setopt appendhistory
 setopt hist_find_no_dups

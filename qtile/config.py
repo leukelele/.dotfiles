@@ -70,15 +70,16 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+ unmute")),
 
-    # Toggle between different layouts as defined below
+    # Toggle between different layouts as defined in layouts section
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "space", lazy.spawn("fuzzel -I --dpi-aware=no"), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # System controls
-    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "x", lazy.spawn("wlogout -b 2")),
+    Key([mod], "w", lazy.spawn("dunstctl close-all")),
 
     # Apps
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),

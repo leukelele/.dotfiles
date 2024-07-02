@@ -14,6 +14,10 @@
 pkill -f kanshi
 kanshi &
 
+# Notification service
+pkill -f mako
+dunst &
+
 # Network manager applet
 # run nm-applet &
 
@@ -22,10 +26,6 @@ kanshi &
 
 # Load power manager
 # xfce4-power-manager &
-
-# Load notification service
-# pkill -f mako
-# mako &
 
 # Setup Wallpaper and update colors
 # ~/dotfiles/qtile/scripts/wallpaper.sh init

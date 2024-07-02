@@ -12,7 +12,7 @@
 
 # Readjusts to laptop resolution
 pkill -f kanshi
-kanshi &
+kanshi
 
 # Network manager applet
 # run nm-applet &

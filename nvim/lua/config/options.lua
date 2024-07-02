@@ -18,7 +18,7 @@ opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10
 opt.termguicolors = true
-opt.completeopt = "menu,menuone,noselect"
+opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviors
 opt.backspace="indent,eol,start"
@@ -28,7 +28,5 @@ opt.errorbells = false
 opt.hidden = true
 opt.iskeyword:append("-")
 opt.modifiable = true
-opt.splitbelow = true
-opt.splitright = true
 opt.undofile = true
 vim.keymap.set("i", "kj", "<Esc>")

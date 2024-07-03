@@ -1,7 +1,10 @@
 #!/bin/bash
 version=$(cat .version/name)
 source .install/includes/colors.sh
+
+# this hasn't been vetted yet
 source .install/includes/library.sh
+
 clear
 
 # Set installation mode
@@ -25,7 +28,6 @@ EOF
 echo -e "${NONE}"
 
 echo "Version: $version"
-echo "by Stephan Raabe (modified by Luke Le) 2024"
 echo ""
 
 if [ -d ~/.dotfiles ] ;then
@@ -36,7 +38,12 @@ else
 fi
 echo ""
 
-source .install/required.sh
-source .install/paru.sh
+# the following has been vetted
+source .install/required.sh 
 source .install/confirm-start.sh
+source .install/paru.sh
+source .install/paralleldownloads.sh
 source .install/updatesystem.sh
+source .install/installer.sh
+
+paru -Rns gum figlet

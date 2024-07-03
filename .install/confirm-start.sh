@@ -2,7 +2,7 @@
 # Confirm Start
 # ------------------------------------------------------
 
-# Warning for if dotfiles are placed in the home directory
+# Warning for if .dotfiles are placed in the home directory
 echo "You can cancel the installation at any time with CTRL + C"
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")

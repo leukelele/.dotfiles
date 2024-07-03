@@ -20,11 +20,11 @@
     icon_position=off
     indicate_hidden = yes
     markup = full
-    show_age_threshold = 16
+    show_age_threshold = 11
     show_indicators = true
     sort = urgency_descending
     stack_duplicates = true
-    timeout = 16
+    timeout = 10
     word_wrap = yes
 
     # placement

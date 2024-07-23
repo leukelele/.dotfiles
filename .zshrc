@@ -1,17 +1,17 @@
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # plugins
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
-# Set the directory for zinit and plugins
+# set the directory for zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download zinit, if it's not there yet
+# download zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Source zinit
+# source zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
 # zsh plugins
@@ -19,12 +19,14 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # behaviors
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 # TMUX
-[[ -z "$TMUX" ]] && exec tmux
+if [ -z "${TMUX}" ]; then
+    exec tmux new-session -A >/dev/null 2>&1
+fi
 
 # init
 eval "$(starship init zsh)"
@@ -74,11 +76,16 @@ setopt sharehistory
 # pfetch when terminal
 # pfetch
 
-#------------------------------------------------------------------------------
+# removes the immediate keystroke that isn't registered
+clear
+
+# -----------------------------------------------------------------------------
 # alias
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 alias fetch='pfetch'
+
+alias nb="cd ~/.nb && vim"
 
 # random note (selects random note from .nb)
 alias rnt='source $HOME/.config/qtile/scripts/random.sh'
@@ -86,7 +93,7 @@ alias rnt='source $HOME/.config/qtile/scripts/random.sh'
 alias vim='nvim'
 
 alias yay="paru"
-alias yeet-"paru -Rns"
+alias yeet="paru -Rns"
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'

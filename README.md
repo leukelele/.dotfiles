@@ -1,32 +1,36 @@
-# todo
-## pacman
-- [ ] brightnessctl
-- [ ] qtile
-- [ ] gnome-settings-daemon     (integrate plasma to gtk app)
-- [ ] gsettings-desktop-schemas
-- [ ] gsettings-qt
-- [ ] python-dbus-next  (don't know what this is for)
-- [ ] python-psutil     (grab sys utils and processes)
-- [ ] python-pywal      (get most prominant colors)
-- [ ] python-pywayland  (provide python bindings to wayland)
-- [ ] python-pywlroots  (layer for python to communicate with pywayland)
-- [ ] xorg-xwayland
-- [ ] wlroots
+# Packages to be installed
+## Packages from pacman
+- alacritty
+- alsa-utils (this is for amixer, which is the default audio client for qtile)
+- brightnessctl
+- dunst (I found this to be more lightweight than mako)
+- firefox
+- fzf
+- gdb
+- git
+- kanshi
+- keepassxc
+- neovim
+- python-pywlroots
+- pwndbg
+- ripgrep (this is for nvim-telescope)
+- starship
+- timeshift (had to use "sudo -E timeshift-gtk for gui)
+- tmux
+- unzip
+- ttf-jetbrains-mono-nerd
+- wl-clipboard
+- wlogout
+- zoxide (makes cd more convenient)
+- zsh
 
-- [ ] alacritty
-- [ ] keepassxc
-- [ ] neovim
-- [ ] wl-clipboard
-- [ ] mako
-- [ ] nemo
-- [ ] starship
-- [ ] tmux
+## Packages from external
+- miniconda
+- paru
 
-## yay
-- [ ] kanshi
-- [ ] qtile-extras
-- [ ] wlr-randr
-
-- [ ] discord
-- [ ] obsidian
-- [ ] pfetch-rs
+## Paru Install
+- fuzzel
+- obsidian
+- pfetch-rs
+- spotify
+- greetd-tuigreet

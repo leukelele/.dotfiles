@@ -2,7 +2,9 @@
 ## Packages from pacman
 - alacritty
 - alsa-utils (this is for amixer, which is the default audio client for qtile)
+- base-devel
 - brightnessctl
+- btop
 - dunst (I found this to be more lightweight than mako)
 - firefox
 - fzf
@@ -17,10 +19,11 @@
 - starship
 - timeshift (had to use "sudo -E timeshift-gtk for gui)
 - tmux
-- unzip
 - ttf-jetbrains-mono-nerd
+- unzip
 - wl-clipboard
 - wlogout
+- xdg-utils (I'm pretty sure this is so that links may be in nvim)
 - zoxide (makes cd more convenient)
 - zsh
 
@@ -29,8 +32,9 @@
 - paru
 
 ## Paru Install
+- discord
+- greetd-tuigreet
 - fuzzel
 - obsidian
 - pfetch-rs
 - spotify
-- greetd-tuigreet

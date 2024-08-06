@@ -12,6 +12,7 @@
 - git
 - kanshi
 - keepassxc
+- less (for git)
 - neovim
 - python-pywlroots
 - pwndbg

@@ -109,7 +109,7 @@ for vt in range(1, 8):
 layouts = [
     #layout.Bsp(margin=5),
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Columns(margin=5),
+    layout.Columns(border_focus="#bb9af7", margin=5),
     #layout.Matrix(),
     layout.Max(margin=5),
     #layout.MonadTall(margin=5),

@@ -25,6 +25,9 @@ opt.backspace="indent,eol,start"
 opt.clipboard:append("unnamedplus")
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.errorbells = false
+-- opt.foldcolumn = 1
+opt.foldlevelstart = 1
+opt.foldmethod = manual
 opt.hidden = true
 opt.iskeyword:append("-")
 opt.modifiable = true

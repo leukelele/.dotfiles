@@ -26,7 +26,7 @@ return {
   },
 
   opts = {
-    notes_subdir = "",
+    notes_subdir = "fleeting/",
     new_notes_location = "notes_subdir",
     disable_frontmatter = true,
 
@@ -39,7 +39,7 @@ return {
     workspaces = {
       {
         name = "notebook",
-        path = "~/.nb",
+        path = "~/.nb/",
       },
     },
 

@@ -20,7 +20,7 @@ from libqtile.lazy import lazy
 # --------------------------------------------------------
 
 terminal = "alacritty"
-browser = "firefox"
+browser = "zen-browser"
 #file_manager = "nemo"
 
 current_dir = getcwd()
@@ -210,7 +210,7 @@ widgets = [
             format="%H:%M"
         ),
         seperator,
-        widget.Clock(format="%a %d-%m-%y"),
+        widget.Clock(format="%a %y-%m-%d"),
         widget.Spacer(length=6),
 ]
 

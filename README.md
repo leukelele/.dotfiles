@@ -39,3 +39,4 @@
 - obsidian
 - pfetch-rs
 - spotify
+- zen

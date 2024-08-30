@@ -88,7 +88,7 @@ alias fetch='pfetch'
 alias nb="cd ~/.nb && vim"
 
 # random note (selects random note from .nb)
-alias rnt='source $HOME/.config/qtile/scripts/random.sh'
+alias rn='source $HOME/.config/qtile/scripts/random.sh'
 
 alias vim='nvim'
 

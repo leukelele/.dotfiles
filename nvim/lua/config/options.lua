@@ -14,6 +14,8 @@ opt.incsearch = true
 opt.smartcase = true
 
 -- Appearance
+opt.list = true
+opt.listchars = "tab:> ,space:·"
 opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10

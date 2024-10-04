@@ -1,3 +1,2 @@
-qtile/__pycache__
-tmux/plugins/tmux-sensible/
-tmux/plugins/tmux/
+qtile/__pycache__/
+tmux/plugins/

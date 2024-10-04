@@ -15,8 +15,8 @@ pkill -f kanshi
 kanshi &
 
 # Notification service
-pkill -f mako
-dunst &
+#pkill -f dunst
+#dunst &
 
 # Network manager applet
 # run nm-applet &

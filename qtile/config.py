@@ -6,32 +6,30 @@
 #                                                      |___/ 
 # Icons: https://fontawesome.com/search?o=r&m=free
 
-from os import getcwd
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.backend.wayland import InputConfig
+from libqtile.dgroups import simple_key_binder
+from libqtile import bar, layout, qtile, widget, hook
+from libqtile.lazy import lazy
+#from os import getcwd
 from os.path import expanduser
 from subprocess import Popen
-from libqtile import bar, layout, qtile, widget, hook
-from libqtile.backend.wayland import InputConfig
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
-from libqtile.dgroups import simple_key_binder
-from libqtile.lazy import lazy
 
 # --------------------------------------------------------
-# Defaults
+# Default apps
 # --------------------------------------------------------
 
 terminal = "alacritty"
 browser = "zen-browser"
-#file_manager = "nemo"
-
-current_dir = getcwd()
 
 # --------------------------------------------------------
 # Keybindings
 # --------------------------------------------------------
 
-mod = "mod4"
+mod = "mod4"    # left super
 
 keys = [
+
     # Switch focus between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -81,7 +79,7 @@ keys = [
     Key([mod], "x", lazy.spawn("wlogout -b 2")),
     Key([mod], "w", lazy.spawn("dunstctl close-all")),
 
-    # Apps
+    # Quick app launch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
     # Key([mod], "n", lazy.spawn(file_manager), desc="Launch File Manager"),
@@ -140,6 +138,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        #Match(title="Picture-in-Picture"),  # GPG key password entry
     ]
 )
 
@@ -172,8 +171,12 @@ seperator = [
 
 widgets = [
         widget.Spacer(length=5),
+        
+        # current layout indicator
         widget.CurrentLayoutIcon(scale=0.60),
         seperator,
+
+        # workspaces
         widget.GroupBox(
             active="#ffffff", 
             borderwidth=2, 
@@ -182,17 +185,22 @@ widgets = [
             this_current_screen_border="#bb9af7"
         ),
         seperator,
+
+        # current app being focused
         widget.WindowName(
             empty_group_string="Nothing going on rn...",
             foreground="#9cbafe",
             max_chars=30, 
         ),
 
+        # current sound volume level
         widget.Volume(
             foreground="#b6ffb4",
             fmt="󰕾 {}",
             ),
         seperator,
+
+        # current backlight level
         widget.Backlight(
             brightness_file="/sys/class/backlight/intel_backlight/brightness", 
             foreground="#8effdd",
@@ -200,19 +208,23 @@ widgets = [
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, 
             fmt="󰛨 {}"),
         seperator,
+
+        # current battery level
         widget.Battery(
             foreground="#ff8e8e",
             format='{char} {percent:2.0%} {hour:d}:{min:02d}'
         ),
         seperator,
+
+        # time
         widget.Clock(
             foreground="#bb9af7",
             format="%H:%M"
         ),
         seperator,
         widget.Clock(format="%a %y-%m-%d"),
-        widget.Spacer(length=6),
-]
+        widget.Spacer(length=5),
+    ]
 
 def flatten(L):
     for item in L:
@@ -228,7 +240,7 @@ widget_list = list(flatten(widgets))
 
 screens = [
     Screen(
-        wallpaper = "~/.cache/wallpaper/pixel-art.png", 
+        wallpaper = "~/.config/qtile/wallpapers/ascii-scenic.png",
         wallpaper_mode = 'fill',
         top = bar.Bar(
             widget_list,

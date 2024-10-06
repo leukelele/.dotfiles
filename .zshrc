@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 # define XDG's config dir
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME=$HOME/.config
 
 # -----------------------------------------------------------------------------
 # zinit plugins
@@ -25,9 +25,10 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # zsh plugins
-zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait lucid
+zinit light Aloxaf/fzf-tab
+zinit ice wait"1" lucid
 zinit light zsh-users/zsh-completions
 
 # completion styling

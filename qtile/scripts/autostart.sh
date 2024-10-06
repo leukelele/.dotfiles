@@ -13,6 +13,9 @@
 # Readjusts to laptop resolution
 #pkill -f kanshi
 #kanshi &
+
+# wlr-randr solution bc it doesn't have an output like
+# kanshi
 wlr-randr --output eDP-1 --on --scale 1.75
 
 # Notification service
@@ -21,12 +24,3 @@ mako &
 
 # Network manager applet
 # run nm-applet &
-
-# For Virtual Machine 
-# xrandr --output Virtual-1 --mode 1920x1080
-
-# Load power manager
-# xfce4-power-manager &
-
-# Setup Wallpaper and update colors
-# ~/dotfiles/qtile/scripts/wallpaper.sh init

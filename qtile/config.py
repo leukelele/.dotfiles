@@ -223,7 +223,7 @@ widgets = [
         ),
         seperator,
         widget.Clock(format="%a %y-%m-%d"),
-        widget.Spacer(length=5),
+        widget.Spacer(length=7),
     ]
 
 def flatten(L):

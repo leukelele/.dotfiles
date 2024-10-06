@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #   ___ _____ ___ _     _____   ____  _             _    
 #  / _ \_   _|_ _| |   | ____| / ___|| |_ __ _ _ __| |_  
@@ -11,12 +11,13 @@
 # ----------------------------------------------------- 
 
 # Readjusts to laptop resolution
-pkill -f kanshi
-kanshi &
+#pkill -f kanshi
+#kanshi &
+wlr-randr --output eDP-1 --on --scale 1.75
 
 # Notification service
-#pkill -f dunst
-#dunst &
+pkill -f mako
+mako &
 
 # Network manager applet
 # run nm-applet &

@@ -11,9 +11,9 @@ from libqtile.backend.wayland import InputConfig
 from libqtile.dgroups import simple_key_binder
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.lazy import lazy
-#from os import getcwd
 from os.path import expanduser
-from subprocess import Popen
+#import os
+from subprocess import run, call, Popen
 
 # --------------------------------------------------------
 # Default apps
@@ -288,6 +288,7 @@ wl_input_rules = {
 wmname = "QTILE"
 
 # HOOK startup
-@hook.subscribe.startup_once
+@hook.subscribe.startup
 def autostart():
-    Popen(expanduser("~/.config/qtile/autostart.sh"))
+    script = expanduser("~/.config/qtile/scripts/autostart.sh")
+    Popen(script)

@@ -177,3 +177,7 @@ sudo virsh net-autostart default
 to disable add `--disable` at the end.
 
 
+## pacman
+
+in /etc/pacman.conf
+you can enable color and parallel downloads by uncommenting

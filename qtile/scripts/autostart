@@ -15,8 +15,8 @@
 #kanshi &
 
 # wlr-randr solution bc it doesn't have an output like
-# kanshi
-wlr-randr --output eDP-1 --on --scale 1.75
+pkill -f wlr-randr
+wlr-randr --output eDP-1 --on --scale 1.75 --custom-mode 2880x1800@60Hz
 
 # Notification service
 pkill -f mako

@@ -12,8 +12,7 @@ from libqtile.dgroups import simple_key_binder
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.lazy import lazy
 from os.path import expanduser
-#import os
-from subprocess import run, call, Popen
+from subprocess import Popen
 
 # --------------------------------------------------------
 # Default apps
@@ -25,7 +24,6 @@ browser = "zen-browser"
 # --------------------------------------------------------
 # Keybindings
 # --------------------------------------------------------
-
 mod = "mod4"    # left super
 
 keys = [
@@ -68,6 +66,9 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+ unmute")),
 
+    # screenshot
+    Key([mod], "s", lazy.spawn('grim -g "$(slurp)" ~/pictures/$(date +"%y%m%d%H%M%S").png && wl-copy < ~/pictures/$(date +"%y%m%d%H%M%S").png', shell=True)),
+
     # Toggle between different layouts as defined in layouts section
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "space", lazy.spawn("fuzzel -I --dpi-aware=no"), desc="Spawn a command using a prompt widget"),
@@ -77,7 +78,10 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "x", lazy.spawn("wlogout -b 2")),
-    Key([mod], "w", lazy.spawn("dunstctl close-all")),
+
+    # System notifs
+    Key([mod], "w", lazy.spawn("makoctl dismiss -a")),
+    Key([mod], "e", lazy.spawn("makoctl restore")),
 
     # Quick app launch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
@@ -132,13 +136,13 @@ floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-        #Match(title="Picture-in-Picture"),  # GPG key password entry
+        Match(wm_class="confirmreset"),         # gitk
+        Match(wm_class="makebranch"),           # gitk
+        Match(wm_class="maketag"),              # gitk
+        Match(wm_class="ssh-askpass"),          # ssh-askpass
+        Match(title="branchdialog"),            # gitk
+        Match(title="pinentry"),                # GPG key password entry
+        #Match(title="Picture-in-Picture"),
     ]
 )
 
@@ -240,7 +244,7 @@ widget_list = list(flatten(widgets))
 
 screens = [
     Screen(
-        wallpaper = "~/.config/qtile/wallpapers/ascii-scenic.png",
+        wallpaper = "~/.config/qtile/wallpapers/tetris.jpg",
         wallpaper_mode = 'fill',
         top = bar.Bar(
             widget_list,
@@ -290,5 +294,5 @@ wmname = "QTILE"
 # HOOK startup
 @hook.subscribe.startup
 def autostart():
-    script = expanduser("~/.config/qtile/scripts/autostart.sh")
+    script = expanduser("~/.config/qtile/scripts/autostart")
     Popen(script)

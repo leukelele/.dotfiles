@@ -184,30 +184,30 @@ widgets = [
         widget.GroupBox(
             active="#ffffff", 
             borderwidth=2, 
-            inactive="#a6a6a6", 
+            inactive="#a0a0a0", 
             margin_x=2, 
-            this_current_screen_border="#bb9af7"
+            this_current_screen_border="#cba6f7"
         ),
         seperator,
 
         # current app being focused
         widget.WindowName(
             empty_group_string="Nothing going on rn...",
-            foreground="#9cbafe",
+            foreground="#89b4fa",
             max_chars=30, 
         ),
 
         # current sound volume level
         widget.Volume(
-            foreground="#b6ffb4",
+            foreground="#94e2d5",
             fmt="󰕾 {}",
             ),
         seperator,
 
         # current backlight level
         widget.Backlight(
+            foreground="#a6e3a1",
             brightness_file="/sys/class/backlight/intel_backlight/brightness", 
-            foreground="#8effdd",
             max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", 
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, 
             fmt="󰛨 {}"),
@@ -215,18 +215,21 @@ widgets = [
 
         # current battery level
         widget.Battery(
-            foreground="#ff8e8e",
+            foreground="#f9e2af",
             format='{char} {percent:2.0%} {hour:d}:{min:02d}'
         ),
         seperator,
 
         # time
         widget.Clock(
-            foreground="#bb9af7",
+            foreground="#f38ba8",
             format="%H:%M"
         ),
         seperator,
-        widget.Clock(format="%a %y-%m-%d"),
+        widget.Clock(
+            foreground="#f2cdcd",
+            format="%a %y-%m-%d"
+        ),
         widget.Spacer(length=7),
     ]
 
@@ -244,7 +247,7 @@ widget_list = list(flatten(widgets))
 
 screens = [
     Screen(
-        wallpaper = "~/.config/qtile/wallpapers/tetris.jpg",
+        wallpaper = "~/.config/qtile/wallpapers/another-world-or-sum.png",
         wallpaper_mode = 'fill',
         top = bar.Bar(
             widget_list,

@@ -182,11 +182,13 @@ widgets = [
 
         # workspaces
         widget.GroupBox(
-            active="#ffffff", 
             borderwidth=2, 
+            active="#ffffff", 
             inactive="#a0a0a0", 
             margin_x=2, 
-            this_current_screen_border="#cba6f7"
+            highlight_method='block',
+            block_highlight_text_color="#000000",
+            this_current_screen_border="#cba6f7",
         ),
         seperator,
 

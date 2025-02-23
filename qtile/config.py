@@ -229,7 +229,7 @@ widgets = [
         ),
         seperator,
         widget.Clock(
-            foreground="#f2cdcd",
+            foreground="#ffffff",
             format="%a %y-%m-%d"
         ),
         widget.Spacer(length=7),

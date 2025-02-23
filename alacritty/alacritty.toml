@@ -28,5 +28,5 @@ style = "Medium"
 save_to_clipboard = true
 
 [window.padding]
-x = 10
+x = 12
 y = 10

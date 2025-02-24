@@ -196,14 +196,15 @@ widgets = [
         widget.WindowName(
             empty_group_string="Nothing going on rn...",
             foreground="#89b4fa",
-            max_chars=30, 
+            max_chars=34, 
         ),
 
         # current connect net
         widget.Wlan(
             foreground="#94e2d5",
-            format="󰖩 {essid} {percent:2.0%}",
-            update_interval=20,
+            format="󰖩 {percent:2.0%} {essid}",
+            max_chars=12,
+            update_interval=16,
         ),
         seperator,
 

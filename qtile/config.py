@@ -199,16 +199,24 @@ widgets = [
             max_chars=30, 
         ),
 
+        # current connect net
+        widget.Wlan(
+            foreground="#94e2d5",
+            format="󰖩 {essid} {percent:2.0%}",
+            update_interval=20,
+        ),
+        seperator,
+
         # current sound volume level
         widget.Volume(
-            foreground="#94e2d5",
+            foreground="#a6e3a1",
             fmt="󰕾 {}",
             ),
         seperator,
 
         # current backlight level
         widget.Backlight(
-            foreground="#a6e3a1",
+            foreground="#f9e2af",
             brightness_file="/sys/class/backlight/intel_backlight/brightness", 
             max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness", 
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('arandr')}, 
@@ -217,7 +225,7 @@ widgets = [
 
         # current battery level
         widget.Battery(
-            foreground="#f9e2af",
+            foreground="#f2cdcd",
             format='{char} {percent:2.0%} {hour:d}:{min:02d}'
         ),
         seperator,

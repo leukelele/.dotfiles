@@ -75,7 +75,7 @@ setopt sharehistory
 # aliases
 # -----------------------------------------------------------------------------
 
-alias fetch='pfetch'
+alias fetch='clear && pfetch'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias vim='nvim'
@@ -114,7 +114,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # remove subsequent artifacts
-clear
 fetch
 
 

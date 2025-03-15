@@ -19,7 +19,7 @@ from subprocess import Popen
 # --------------------------------------------------------
 
 terminal = "alacritty"
-browser = "zen"
+browser = "zen-browser"
 
 # --------------------------------------------------------
 # Keybindings

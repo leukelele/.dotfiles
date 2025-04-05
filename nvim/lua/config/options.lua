@@ -1,11 +1,11 @@
 local opt = vim.opt
 
 -- Tab/Indentation
-opt.expandtab = true
-opt.shiftwidth = 2
+opt.expandtab = false
+opt.shiftwidth = 4
 opt.smartindent = true
-opt.softtabstop = 2
-opt.tabstop = 2
+opt.softtabstop = 4
+opt.tabstop = 4
 
 -- Search
 opt.hlsearch = false
@@ -21,6 +21,7 @@ opt.relativenumber = true
 opt.scrolloff = 10
 opt.termguicolors = true
 opt.completeopt = "menuone,noinsert,noselect"
+opt.colorcolumn = "90"
 
 -- Behaviors
 opt.backspace="indent,eol,start"

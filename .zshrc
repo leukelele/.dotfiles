@@ -115,5 +115,3 @@ unset __conda_setup
 
 # remove subsequent artifacts
 fetch
-
-

@@ -1,3 +1,0 @@
-profile Laptop {
-    output eDP-1 position 0,0 mode 2880x1800 scale 1.50
-}

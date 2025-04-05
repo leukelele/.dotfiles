@@ -21,12 +21,12 @@ opt.relativenumber = true
 opt.scrolloff = 10
 opt.termguicolors = true
 opt.completeopt = "menuone,noinsert,noselect"
-opt.colorcolumn = "90"
+opt.colorcolumn = "85"
 
 -- Behaviors
 opt.backspace="indent,eol,start"
 opt.clipboard:append("unnamedplus")
-opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
+opt.conceallevel = 2
 opt.errorbells = false
 -- opt.foldcolumn = 1
 opt.foldlevelstart = 1

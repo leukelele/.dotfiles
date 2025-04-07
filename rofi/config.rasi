@@ -1,0 +1,2 @@
+@import "catppuccin-mocha"
+@theme "/home/leukelele/.config/rofi/themes/catppuccin-default.rasi"

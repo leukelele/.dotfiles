@@ -1,0 +1,150 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"idle_inhibitor",
+		"sway/workspaces",
+		"sway/scratchpad",
+		"sway/window",
+	],
+	"modules-center": [],
+	"modules-right": [
+		//"temperature",
+		//"cpu",
+		//"memory",
+		"network",
+		"pulseaudio",
+		"backlight",
+		"battery",
+		"clock",
+	],
+
+	"sway/workspaces": {
+		"all-outputs": true,
+		"warp-on-scroll": true,
+		"enable-bar-scroll": true,
+		"disable-scroll-wraparound": false,
+		"format": " {icon} ",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+		},
+		//"format-icons": {
+		//	"urgent": "",
+		//	"active": "",
+		//	"default": ""
+		//}
+	},
+
+	"sway/window": {
+		"format": "{app_id}",
+		"separate-outputs": true,
+		"icon": false,
+		"rewrite": {
+			"Alacritty": "alacritty",
+		}
+	},
+
+	"sway/scratchpad": {
+		"format": "  {count}",
+		"show-empty": false,
+		"format-icons": ["", " "],
+		"tooltip": true,
+		"tooltip-format": "{app}: {title}"
+	},
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+//	"temperature": {
+//		"tooltip":false,
+//		"critical-threshold": 70,
+//		"format": " {temperatureC}°C",
+//		"format-critical": "{temperatureC}°C ",
+//	},
+//	"cpu": {
+//		"interval": 1,
+//		"format": "<span font='Font Awesome 6 Free-Solid'>\uf2db</span>  {usage}%",
+//		"on-click": "alacritty -e btop"
+//	},
+//	"memory": {
+//		"interval": 1,
+//		"format": "<span font='Font Awesome 5 Free'>\uf538</span>  {percentage}%",
+//		"on-click": "alacritty -e btop",
+//		"tooltip-format": "{used}/{total} GiB"
+//	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": " ",
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				" "
+			]
+		},
+		"tooltip": false,
+		//"tooltip-format": "{volume}% {desc}",
+	},
+	"network": {
+		"format-wifi":" {bandwidthDownBytes} |  {bandwidthUpBytes}",
+		"format-disconnected": "󰪎",
+		"interval": 5,
+		"tooltip": false,
+		//"format-wifi": "{icon} {essid}",
+		//"format-ethernet": "󰈀",
+		//"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+		//"tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
+		//"tooltip-format-disconnected": "Disconnected",
+		//"on-click": "exec ~/.config/rofi/wifi/wifi.sh",
+		//"on-click-right": "alacritty -e nmtui"
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery": {
+		"interval": 1,
+		"states": {
+			"good": 99,
+			"warning": 30,
+			"critical": 20
+		},
+		"format-icons": ["󰂎","󰁺","󰁻","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+		"format": "{icon} {capacity}%",
+		"format-critical": "{icon} {capacity}%",
+		"format-warning": "{icon} {capacity}%",
+		"format-full": "{icon} {capacity}%",
+		"format-charging": "󰂅 {capacity}%",
+		"format-charging-critical": "󰢜 {capacity}%",
+		"format-charging-warning": "󰢝 {capacity}%",
+		"format-plugged": " 󰂅  {capacity}%",
+		"format-alt": " 󱧥  {time}",
+		"tooltip": false
+	},
+
+	"clock": {
+		"format": "{:%H:%M • %y/%m/%d %a}",
+		"tooltip": true,
+		"tooltip-format": "<tt>{calendar}</tt>"
+	}
+}

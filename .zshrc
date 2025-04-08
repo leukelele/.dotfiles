@@ -98,20 +98,22 @@ if [ -z "${TMUX}" ]; then
     exec tmux new-session -A >/dev/null 2>&1
 fi
 
+# remove subsequent artifacts
+fetch
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/leukelele/.conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+export CONDARC=$HOME/.config/condarc
+__conda_setup="$('/home/leukelele/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/leukelele/.conda/etc/profile.d/conda.sh" ]; then
-        . "/home/leukelele/.conda/etc/profile.d/conda.sh"
+    if [ -f "/home/leukelele/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/leukelele/.miniconda/etc/profile.d/conda.sh"
     else
-        export PATH="/home/leukelele/.conda/bin:$PATH"
+        export PATH="/home/leukelele/.miniconda/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# remove subsequent artifacts
-fetch

@@ -78,12 +78,12 @@ setopt sharehistory
 alias fetch='clear && pfetch'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
-alias vim='nvim'
+alias vi='nvim'
 alias yay="paru"
 alias yeet="paru -Rns"
 
 # open up notes
-alias nb="cd ~/.nb && vim"
+alias nb="cd ~/.nb && vi"
 
 # random note (selects random note from .nb)
 alias rn='source $HOME/.config/qtile/scripts/random.sh'
@@ -97,9 +97,6 @@ alias rn='source $HOME/.config/qtile/scripts/random.sh'
 if [ -z "${TMUX}" ]; then
     exec tmux new-session -A >/dev/null 2>&1
 fi
-
-# remove subsequent artifacts
-fetch
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -117,3 +114,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# remove subsequent artifacts
+fetch

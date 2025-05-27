@@ -1,91 +1,82 @@
 {
-	"layer": "top",
-	"position": "top",
+	"position": "top",                  // places the bar at the top of screen
+	"layer": "bottom",                  // bar displayed beneath other windows
+
+	// gives the floating feel with waybar
+	"margin-top": 4,
+	"margin-right": 6,
+	"margin-bottom": 0,
+	"margin-left": 6,
 
 	"modules-left": [
-		"idle_inhibitor",
 		"sway/workspaces",
 		"sway/scratchpad",
+//		"idle_inhibitor",
 		"sway/window",
 	],
-	"modules-center": [],
+	"modules-center": [
+		"clock",
+	],
 	"modules-right": [
-		//"temperature",
-		//"cpu",
-		//"memory",
 		"network",
 		"pulseaudio",
 		"backlight",
 		"battery",
-		"clock",
 	],
 
 	"sway/workspaces": {
-		"all-outputs": true,
-		"warp-on-scroll": true,
-		"enable-bar-scroll": true,
-		"disable-scroll-wraparound": false,
-		"format": " {icon} ",
-		"persistent-workspaces": {
+		"all-outputs": true,          // workspaces shown on every output
+		"disable-scroll": true,       // disable cycling through workspaces
+		"format": " {icon} ",           // how info displayed
+		"persistent-workspaces": {    // lists workspaces that should be shown
 			"1": [],
 			"2": [],
 			"3": [],
 			"4": [],
 			"5": [],
-			"6": [],
-			"7": [],
-			"8": [],
-			"9": [],
-			"10": [],
 		},
-		//"format-icons": {
-		//	"urgent": "",
-		//	"active": "",
-		//	"default": ""
-		//}
+	},
+
+	"sway/scratchpad": {
+		"format": " {count}",
+		"show-empty": true,           // when empty, module doesn't show
+		"tooltip": true,              // desc. that shows when mouse hovers
+		"tooltip-format": "{app}"       // how tooltip shows
+	},
+
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
 	},
 
 	"sway/window": {
 		"format": "{app_id}",
-		"separate-outputs": true,
 		"icon": false,
+		"separate-outputs": true,     // outputs specific to current output
 		"rewrite": {
+			"^$": "nothing going on rn...",
 			"Alacritty": "alacritty",
 		}
 	},
 
-	"sway/scratchpad": {
-		"format": "  {count}",
-		"show-empty": false,
-		"format-icons": ["", " "],
+	"clock": {
+		"format": "{:%H:%M • %y/%m/%d %a}",
 		"tooltip": true,
-		"tooltip-format": "{app}: {title}"
+		"tooltip-format": "<tt>{calendar}</tt>"
 	},
 
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-//	"temperature": {
-//		"tooltip":false,
-//		"critical-threshold": 70,
-//		"format": " {temperatureC}°C",
-//		"format-critical": "{temperatureC}°C ",
-//	},
-//	"cpu": {
-//		"interval": 1,
-//		"format": "<span font='Font Awesome 6 Free-Solid'>\uf2db</span>  {usage}%",
-//		"on-click": "alacritty -e btop"
-//	},
-//	"memory": {
-//		"interval": 1,
-//		"format": "<span font='Font Awesome 5 Free'>\uf538</span>  {percentage}%",
-//		"on-click": "alacritty -e btop",
-//		"tooltip-format": "{used}/{total} GiB"
-//	},
+	"network": {
+		"format-wifi": "{icon} {essid}",
+		"format-disconnected": "󰪎",
+		"format-ethernet": "󰈀",
+		"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+		"interval": 10,               // time until update Down/Up
+		"tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes}",
+		"tooltip-format-disconnected": "disconnected",
+	},
 
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
@@ -98,21 +89,8 @@
 			]
 		},
 		"tooltip": false,
-		//"tooltip-format": "{volume}% {desc}",
 	},
-	"network": {
-		"format-wifi":" {bandwidthDownBytes} |  {bandwidthUpBytes}",
-		"format-disconnected": "󰪎",
-		"interval": 5,
-		"tooltip": false,
-		//"format-wifi": "{icon} {essid}",
-		//"format-ethernet": "󰈀",
-		//"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
-		//"tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
-		//"tooltip-format-disconnected": "Disconnected",
-		//"on-click": "exec ~/.config/rofi/wifi/wifi.sh",
-		//"on-click-right": "alacritty -e nmtui"
-	},
+
 	"backlight": {
 		"format": "{icon} {percent}%",
 		"format-icons": [
@@ -127,14 +105,8 @@
 			""
 		]
 	},
+
 	"battery": {
-		"interval": 1,
-		"states": {
-			"good": 99,
-			"warning": 30,
-			"critical": 20
-		},
-		"format-icons": ["󰂎","󰁺","󰁻","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
 		"format": "{icon} {capacity}%",
 		"format-critical": "{icon} {capacity}%",
 		"format-warning": "{icon} {capacity}%",
@@ -143,13 +115,14 @@
 		"format-charging-critical": "󰢜 {capacity}%",
 		"format-charging-warning": "󰢝 {capacity}%",
 		"format-plugged": " 󰂅  {capacity}%",
-		"format-alt": " 󱧥  {time}",
-		"tooltip": false
-	},
-
-	"clock": {
-		"format": "{:%H:%M • %y/%m/%d %a}",
+		"format-icons": ["󰂎","󰁺","󰁻","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+		"interval": 1,
+		"states": {
+			"good": 99,
+			"warning": 30,
+			"critical": 20
+		},
 		"tooltip": true,
-		"tooltip-format": "<tt>{calendar}</tt>"
-	}
+		"tooltip-format": "{time}",
+	},
 }

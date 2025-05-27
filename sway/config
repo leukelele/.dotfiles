@@ -7,7 +7,7 @@ set $term alacritty
 set $menu --no-startup-id rofi -show drun
 
 # background directory
-set $wallpaper ~/.dotfiles/wallpapers/galaxies.png
+set $wallpaper ~/.dotfiles/wallpapers/pixel-landscape.jpg
 
 ##############################################################################
 # key binds                                                                  #

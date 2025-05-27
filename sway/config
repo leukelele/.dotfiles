@@ -7,7 +7,7 @@ set $term alacritty
 set $menu --no-startup-id rofi -show drun
 
 # background directory
-set $wallpaper ~/.dotfiles/wallpapers/another-world-or-sum.png
+set $wallpaper ~/.dotfiles/wallpapers/galaxies.png
 
 ##############################################################################
 # key binds                                                                  #
@@ -192,16 +192,16 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # gaps 
-gaps inner 4
-gaps outer 1
+gaps inner 3
+gaps outer 3
 
-# Borders
+# borders
 default_border pixel 1
 default_floating_border pixel 1
-corner_radius 8
+corner_radius 0
 
-default_dim_inactive 0.1
-for_window [app_id=".*"] opacity 0.98
+default_dim_inactive 0
+for_window [app_id=".*"] opacity 1.0
 
 blur enable
 blur_radius 4

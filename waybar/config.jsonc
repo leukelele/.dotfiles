@@ -3,7 +3,7 @@
 	"layer": "bottom",                  // bar displayed beneath other windows
 
 	// gives the floating feel with waybar
-	"margin-top": 4,
+	"margin-top": 6,
 	"margin-right": 6,
 	"margin-bottom": 0,
 	"margin-left": 6,

@@ -1,8 +1,8 @@
 return {
 	'nvim-telescope/telescope.nvim', 
-	tag = '0.1.8',
+	branch = '0.1.x',
 	lazy = true,
-
+	cmd = {"Telescope"},
 	dependencies = { 'nvim-lua/plenary.nvim', 'Burntsushi/ripgrep' },
 
 	keys = {
@@ -20,12 +20,10 @@ return {
 				"--hidden",
 				"--glob", "!**/.git/*",
 			},
-
 			mappings = {
 				i = { ["<esc>"] = require("telescope.actions").close },
 			},
 		},
-
 		pickers = {
 			find_files = {
 				find_command = { "rg", "--files", "--hidden", "--glob", 

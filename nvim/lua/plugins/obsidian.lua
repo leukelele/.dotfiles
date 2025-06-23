@@ -1,3 +1,4 @@
+-- obsidian
 local vault = vim.fn.expand("~/.nb")
 
 return {
@@ -30,22 +31,20 @@ return {
 		notes_subdir = "fleeting/",
 		new_notes_location = "notes_subdir",
 		disable_frontmatter = true,
-
 		workspaces = {
 			{ name = "notebook", path = vault },
 		},
-	
+
 		-- note titles are time-based
 		note_id_func = function(title)
 			return os.date("%y%m%d%H%M")
 		end,
-	
+
 		-- functionality for opening links
 		follow_url_func = function(url)
 			print("Opening: " .. url)
 			vim.fn.jobstart({ "xdg-open", url })
 		end,
-	
 		completion = {
 		  nvim_cmp = true,
 		  min_chars = 2,

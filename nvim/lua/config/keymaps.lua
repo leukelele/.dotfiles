@@ -1,18 +1,19 @@
-local keymap = vim.keymap
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- directory navigation
-keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>", { noremap = true, silent = true})
+map("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
 
 -- pane and window navigation
-keymap.set("n", "<C-h>", "<C-w>h", opts)
-keymap.set("n", "<C-j>", "<C-w>j", opts)
-keymap.set("n", "<C-k>", "<C-w>k", opts)
-keymap.set("n", "<C-l>", "<C-w>l", opts)
-keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>", opts)
-keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>", opts)
-keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>", opts)
-keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", ":TmuxNavigateLeft<CR>", opts)
+map("n", "<C-j>", ":TmuxNavigateDown<CR>", opts)
+map("n", "<C-k>", ":TmuxNavigateUp<CR>", opts)
+map("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
 
 -- window management
-keymap.set("n", "<leader>sv", ":vsplit<CR>", opts)
-keymap.set("n", "<leader>sh", ":split<CR>", opts)
+map("n", "<leader>sv", ":vsplit<CR>", opts)
+map("n", "<leader>sh", ":split<CR>", opts)

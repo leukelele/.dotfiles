@@ -5,7 +5,7 @@ return {
 	dependencies = "williamboman/mason.nvim",
 	event = "BufReadPre",
 	opts = {
-		ensure_installed = { "clangd", "lua_ls" },
+		ensure_installed = { "clangd", "lua_ls", "marksman" },
 		handlers = {
 			function(server_name)
 				require("lspconfig")[server_name].setup({

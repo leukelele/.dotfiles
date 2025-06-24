@@ -8,7 +8,7 @@ return {
 	},
 	event = "BufReadPre",
 	opts = {
-		ensure_installed = { "clangd", "lua_ls", "marksman" },
+		ensure_installed = { "clangd", },
 		handlers = {
 			function(server_name)
 				require("lspconfig")[server_name].setup({

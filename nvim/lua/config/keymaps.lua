@@ -10,6 +10,8 @@ map("n", "gD", function()
 	vim.cmd("/\\[\\^" .. word:gsub("%^", "") .. "\\]:")
 end, { desc = "Jump to footnote definition" })
 
+map("n", "gd", vim.lsp.buf.definition, { desc = "LSP: goto definition" })
+
 -- pane and window navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)

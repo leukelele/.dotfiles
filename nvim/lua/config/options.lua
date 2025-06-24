@@ -35,5 +35,3 @@ opt.hidden = true
 opt.iskeyword:append("-")
 opt.modifiable = true
 opt.undofile = true
-vim.keymap.set("i", "kj", "<Esc>")
-vim.keymap.set("i", "KJ", "<Esc>")

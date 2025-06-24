@@ -46,8 +46,8 @@ return {
 			vim.fn.jobstart({ "xdg-open", url })
 		end,
 		completion = {
-		  nvim_cmp = true,
-		  min_chars = 2,
+			nvim_cmp = true,
+			min_chars = 2,
 		},
 	},
 }

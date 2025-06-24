@@ -2,7 +2,7 @@
 local vault = vim.fn.expand("~/.nb")
 
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*",
 	lazy = true,
 

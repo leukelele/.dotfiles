@@ -7,5 +7,8 @@ return {
 	end,
 	opts = {
 		delay = 800,
+		icons = {
+			mappings = false,
+		}
 	}
 }

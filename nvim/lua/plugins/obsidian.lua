@@ -2,7 +2,7 @@
 local vault = vim.fn.expand("~/.nb")
 
 return {
-	"obsidian-nvim/obsidian.nvim",
+	"epwalsh/obsidian.nvim",
 	version = "*",
 	lazy = true,
 
@@ -13,9 +13,9 @@ return {
 	},
 
 	keys = {
-		{ "<leader>kn", mode = "n", "<cmd>ObsidianNew<cr>", 
+		{ "<leader>kn", mode = "n", "<cmd>ObsidianNew<cr>",
 		  desc = "Creates new note" },
-		{ "<leader>km", mode = "n", "<cmd>ObsidianSearch<cr>", 
+		{ "<leader>km", mode = "n", "<cmd>ObsidianSearch<cr>",
 		  desc = "Search notes" },
 	},
 
@@ -45,9 +45,10 @@ return {
 			print("Opening: " .. url)
 			vim.fn.jobstart({ "xdg-open", url })
 		end,
-		completion = {
-			nvim_cmp = true,
-			min_chars = 2,
-		},
+	},
+
+	completion = {
+		nvim_cmp = true,
+		min_chars = 2,
 	},
 }

@@ -10,13 +10,13 @@ return {
 		-- "hrsh7th/cmp-vsnip",
 		-- "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",
 	},
-	opts = function(_, opts)
-		-- You can modify defaults here
-		-- e.g., add new sources:
-		-- table.insert(opts.sources, { name = "path" })
-		-- Customize buffer source:
-		-- opts.sources[2].keyword_length = 5
-	end,
+	--opts = function(_, opts)
+	--	-- You can modify defaults here
+	--	-- e.g., add new sources:
+	--	-- table.insert(opts.sources, { name = "path" })
+	--	-- Customize buffer source:
+	--	-- opts.sources[2].keyword_length = 5
+	--end,
 	config = function(_, opts)
 		local cmp = require("cmp")
 

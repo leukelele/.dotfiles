@@ -1,0 +1,15 @@
+# timeout
+default-timeout=3000
+
+# mako history
+history=1
+max-history=5
+
+# colors
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#b4befe
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387

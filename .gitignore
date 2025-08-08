@@ -1,1 +1,4 @@
 qtile/__pycache__/
+tmux/plugins/tmux-sensible/
+tmux/plugins/tmux-ssh-split/
+tmux/plugins/tmux/

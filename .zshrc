@@ -3,7 +3,11 @@
 # -----------------------------------------------------------------------------
 
 # define XDG's config dir
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
+
+# places .zcommpdump in cache
+ZSH_COMPDUMP="$XDG_CACHE_HOME/zcompdump"
 
 # -----------------------------------------------------------------------------
 # zinit plugins
@@ -39,7 +43,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -color $realpath'
 
 # load completions
-autoload -U compinit; compinit -d $HOME/.cache/zcompdump
+autoload -U compinit; compinit -d $ZSH_COMPDUMP
 zinit cdreplay -q
 
 # -----------------------------------------------------------------------------
@@ -48,7 +52,7 @@ zinit cdreplay -q
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+#eval "$(zoxide init --cmd cd zsh)"
 
 # -----------------------------------------------------------------------------
 # behaviors
@@ -68,8 +72,8 @@ setopt hist_ignore_space
 setopt hist_save_no_dups
 setopt sharehistory
 
-# pfetch when terminal
-# pfetch
+# place lesshst in .cache
+export LESSHISTFILE="$XDG_CACHE_HOME/lesshst"
 
 # -----------------------------------------------------------------------------
 # aliases
@@ -114,5 +118,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# remove subsequent artifacts
+# -----------------------------------------------------------------------------
+# afterwards
+# -----------------------------------------------------------------------------
 fetch

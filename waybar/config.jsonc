@@ -10,7 +10,9 @@
 
 	"modules-left": [
 		"sway/workspaces",
+		"custom/sep",
 		"sway/scratchpad",
+		"custom/sep",
 //		"idle_inhibitor",
 		"sway/window",
 	],
@@ -19,8 +21,11 @@
 	],
 	"modules-right": [
 		"network",
+		"custom/sep",
 		"pulseaudio",
+		"custom/sep",
 		"backlight",
+		"custom/sep",
 		"battery",
 	],
 
@@ -35,6 +40,10 @@
 			"4": [],
 			"5": [],
 		},
+	},
+
+	"custom/sep": {
+		"format": "| ",
 	},
 
 	"sway/scratchpad": {

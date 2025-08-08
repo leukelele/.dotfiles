@@ -149,8 +149,15 @@ window#waybar.empty #window {
 	padding: 4px;
 }
 #battery.warning {
-  color: @yellow;
+	color: @yellow;
 }
 #battery.critical {
-  color: @red;
+	color: @red;
+}
+
+/****************************************************************************
+ * custom                                                                  *
+ ****************************************************************************/
+#custom-sep{
+	color: #7D8294;
 }

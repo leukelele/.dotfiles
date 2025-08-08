@@ -1,13 +1,21 @@
 include /etc/sway/config.d/*
 include catppuccin-mocha
 
+# autostart
+exec mako
+exec swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000'
+
 # default apps
 set $browser firefox
 set $term alacritty
 set $menu --no-startup-id rofi -show drun
 
 # background directory
-set $wallpaper ~/.dotfiles/wallpapers/pixel-gameboy.jpg
+set $wallpaper ~/.dotfiles/misc/wallpapers/pixel-gameboy.jpg
 
 ##############################################################################
 # key binds                                                                  #
@@ -34,6 +42,9 @@ bindsym $mod+Return exec $term
 
 # apps
 bindsym $mod+b exec $browser
+
+# mako notifications
+bindsym $mod+i exec "makoctl dismiss --no-history"
 
 # screenshots
 bindsym Print exec grim -g "$(slurp)" \
@@ -178,7 +189,7 @@ floating_modifier $mod normal
 bindsym $mod+a layout toggle split
 bindsym $mod+s layout tabbed
 
-for_window [app_id="firefox" title="File Upload"] resize set 1000 600
+for_window [app_id="firefox" title="(?i)file|save|upload"] resize set 1000 600
 
 ##############################################################################
 # appearance settings                                                        #

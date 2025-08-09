@@ -5,10 +5,8 @@ include catppuccin-mocha
 exec mako
 exec swayidle -w \
 	timeout 300 'swaylock -f -c 000000' \
-	timeout 360 'swaymsg "output * dpms off"' \
-		resume 'swaymsg "output * dpms on"' \
+	timeout 360 'exec systemctl suspend-then-hibernate' \
 	before-sleep 'swaylock -f -c 000000' \
-	timeout 900 'exec systemctl suspend-then-hibernate'
 
 # default apps
 set $browser firefox

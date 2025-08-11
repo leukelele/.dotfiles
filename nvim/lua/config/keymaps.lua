@@ -10,9 +10,9 @@ map("i", "<A-CR>", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 
 -- note creation
 map("n", "<leader>nn", function()
-  local filename = os.date("%y%m%d%H%S") .. ".md"
-  local filepath = vim.fn.getcwd() .. "/" .. filename
-  vim.cmd("edit " .. filepath)
+    local filename = os.date("%y%m%d%H%S") .. ".md"
+    local filepath = vim.fn.getcwd() .. "/" .. filename
+    vim.cmd("edit " .. filepath)
 end, { desc = "new note in cwd" })
 
 -- pane and window navigation
@@ -27,11 +27,11 @@ map("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
 
 -- telescope
 map("n", "<leader>jf", function()
-	require("telescope.builtin").find_files()
+    require("telescope.builtin").find_files()
 end, { desc = "Find Files" })
 
 map("n", "<leader>jd", function()
-	require("telescope.builtin").live_grep()
+    require("telescope.builtin").live_grep()
 end, { desc = "Live Grep" })
 
 -- tree

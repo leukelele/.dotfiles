@@ -1,3 +1,7 @@
+-- disable netrw before anything can load it.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- bootstrap lazy.nvim (git clone if repo not present)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -6,28 +10,29 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('config.globals')
-require('config.options')
-require('config.keymaps')
+require("config.globals")
+require("config.options")
+require("config.keymaps")
 
 local opts = {
     defaults = {
-      lazy = true,
+        lazy = true,
     },
     install = {
-        colorscheme = { "catppuccin" }
+        colorscheme = { "catppuccin" },
     },
     rtp = {
         disabled_plugins = {
             "gzip",
             "matchit",
             "matchparen",
+            "netrw",
             "netrwPlugin",
             "tarPlugin",
             "tohtml",
@@ -37,7 +42,7 @@ local opts = {
     },
     change_detection = {
         notify = false,
-    }
+    },
 }
 
-require("lazy").setup('plugins', opts)
+require("lazy").setup("plugins", opts)

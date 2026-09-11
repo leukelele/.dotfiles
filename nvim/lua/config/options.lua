@@ -15,24 +15,27 @@ opt.smartcase = true
 
 -- appearance
 opt.list = true
-opt.listchars = "tab:> ,space:·"
+opt.listchars = {
+    tab = "> ",
+    space = "·",
+    trail = "•",
+    nbsp = "␣",
+}
 opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10
 opt.signcolumn = "yes"
 opt.termguicolors = true
-opt.completeopt = "menuone,noinsert,noselect"
+opt.completeopt = { "menuone", "noinsert", "noselect" }
 opt.colorcolumn = "80"
 
 -- behaviors
-opt.backspace="indent,eol,start"
+opt.backspace = { "indent", "eol", "start" }
 opt.clipboard:append("unnamedplus")
 opt.conceallevel = 2
 opt.errorbells = false
--- opt.foldcolumn = 1
+-- opt.foldcolumn = "1"
 opt.foldlevelstart = 1
 opt.foldmethod = "manual"
-opt.hidden = true
 opt.iskeyword:append("-")
-opt.modifiable = true
 opt.undofile = true

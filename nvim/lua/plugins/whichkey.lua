@@ -3,12 +3,12 @@ return {
     event = "VeryLazy",
     init = function()
         vim.o.timeout = true
-        vim.o.timeoutlen = 300
+        vim.o.timeoutlen = 500
     end,
     opts = {
-        delay = 800,
+        delay = 500,
         icons = {
             mappings = false,
-        }
-    }
+        },
+    },
 }

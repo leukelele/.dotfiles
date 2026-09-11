@@ -2,17 +2,31 @@
 -- if ever encounter large files
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
+
     config = function()
-        require("nvim-treesitter.configs").setup({
-            auto_install = true,
-            ensure_installed = {
-                "c", "lua", "markdown", "markdown_inline", "vim", "vimdoc",
-                "comment", "bash"
-            },
-            highlight = { enable = true },
+        local ts = require("nvim-treesitter")
+
+        ts.setup()
+
+        ts.install({
+            "c",
+            "cpp",
+            "lua",
+            "markdown",
+            "markdown_inline",
+            "vim",
+            "vimdoc",
+            "comment",
+            "bash",
+        })
+
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                pcall(vim.treesitter.start, args.buf)
+            end,
         })
     end,
 }

@@ -25,9 +25,14 @@ style = "Thin Italic"
 family = "JetBrainsMono Nerd Font"
 style = "ExtraBold Italic"
 
+[mouse]
+hide_when_typing = true
+
 [selection]
 save_to_clipboard = true
 
-[window.padding]
-x = 12
-y = 10
+[terminal]
+osc52 = "OnlyCopy"
+
+[window]
+padding = { x = 12, y = 10 }

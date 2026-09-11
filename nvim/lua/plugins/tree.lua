@@ -1,16 +1,23 @@
--- file tree
 return {
     "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },  -- lazy-load on commands
-    config = function()
-        -- disable netrw in favor of nvim-tree
-        vim.g.loaded_netrw = 1
-        vim.g.loaded_netrwPlugin = 1
-
-        require("nvim-tree").setup({
-            filters = {
-                dotfiles = true,
-            },
-        })
-    end,
+    cmd = {
+        "NvimTreeToggle",
+        "NvimTreeFindFile",
+        "NvimTreeOpen",
+        "NvimTreeFocus",
+    },
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+        { "<leader>f", "<cmd>NvimTreeToggle<cr>",
+            desc = "toggle file tree" },
+        { "<leader>ef", "<cmd>NvimTreeFindFile<cr>",
+            desc = "find current file in tree" },
+    },
+    opts = {
+        filters = {
+            dotfiles = false,
+        },
+    },
 }

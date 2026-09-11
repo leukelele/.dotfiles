@@ -1,46 +1,22 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- goto
-map("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
-
--- lsp behaviors
+-- LSP
+map("n", "gd", vim.lsp.buf.definition, { desc = "goto definition" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 map("i", "<A-CR>", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 
--- note creation
+-- Note creation in current working directory
 map("n", "<leader>nn", function()
-    local filename = os.date("%y%m%d%H%S") .. ".md"
+    local filename = os.date("%y%m%d") .. ".md"
     local filepath = vim.fn.getcwd() .. "/" .. filename
-    vim.cmd("edit " .. filepath)
-end, { desc = "new note in cwd" })
+    vim.cmd("edit " .. vim.fn.fnameescape(filepath))
+end, { desc = "new note in CWD" })
 
--- pane and window navigation
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-h>", ":TmuxNavigateLeft<CR>", opts)
-map("n", "<C-j>", ":TmuxNavigateDown<CR>", opts)
-map("n", "<C-k>", ":TmuxNavigateUp<CR>", opts)
-map("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
+-- Insert mode escape
+map("i", "kj", "<Esc>", opts)
+map("i", "KJ", "<Esc>", opts)
 
--- telescope
-map("n", "<leader>jf", function()
-    require("telescope.builtin").find_files()
-end, { desc = "Find Files" })
-
-map("n", "<leader>jd", function()
-    require("telescope.builtin").live_grep()
-end, { desc = "Live Grep" })
-
--- tree
-map("n", "<leader>f", ":NvimTreeToggle<CR>", { desc = "Toggle Tree" })
-
--- vim navigation
-map("i", "kj", "<Esc>")
-map("i", "KJ", "<Esc>")
-
--- window management
-map("n", "<leader>sv", ":vsplit<CR>")
-map("n", "<leader>sh", ":split<CR>")
+-- Window management
+map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "split vertical" })
+map("n", "<leader>sh", "<cmd>split<cr>", { desc = "split horizontal" })

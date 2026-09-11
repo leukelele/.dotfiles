@@ -5,18 +5,13 @@ return {
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
+
         -- add snippet or lsp sources as needed:
-        -- "hrsh7th/cmp-path",
-        -- "hrsh7th/cmp-vsnip",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-vsnip",
+        "hrsh7th/vim-vsnip",
         -- "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",
     },
-    --opts = function(_, opts)
-    --  -- You can modify defaults here
-    --  -- e.g., add new sources:
-    --  -- table.insert(opts.sources, { name = "path" })
-    --  -- Customize buffer source:
-    --  -- opts.sources[2].keyword_length = 5
-    --end,
     config = function(_, opts)
         local cmp = require("cmp")
 
@@ -36,7 +31,7 @@ return {
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
-                    local maxwidth = 40
+                    local maxwidth = 50
                     local ellipsis_char = "…"
                     if vim.fn.strchars(vim_item.abbr) > maxwidth then
                         vim_item.abbr = vim.fn.strcharpart(
@@ -45,18 +40,27 @@ return {
                     vim_item.menu = ({
                         nvim_lsp = "LSP",
                         buffer = "Buf",
+                        path = "Path",
+                        vsnip = "Snippet",
                     })[entry.source.name]
+
                     return vim_item
                 end,
             },
+
             mapping = cmp.mapping.preset.insert({
                 ["<C-e>"] = cmp.mapping.abort(),
+                ["<C-Space>"] = cmp.mapping.complete(),
                 -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
+
             sources = cmp.config.sources({
+                { name = "lazydev", group_index = 0 },
                 { name = "nvim_lsp" },
+                { name = "path" },
+                { name = "vsnip" },
                 { name = "buffer" },
             }),
-        }, opts))
+        }, opts or {}))
     end,
 }

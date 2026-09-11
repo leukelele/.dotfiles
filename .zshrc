@@ -52,7 +52,7 @@ zinit cdreplay -q
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
-#eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # -----------------------------------------------------------------------------
 # behaviors
@@ -87,7 +87,7 @@ alias yay="paru"
 alias yeet="paru -Rns"
 
 # open up notes
-alias nb="cd ~/.nb && vi"
+alias nb="cd ~/documents/nb && vi"
 
 # random note (selects random note from .nb)
 alias rn='source $HOME/.config/qtile/scripts/random.sh'
@@ -104,19 +104,22 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-export CONDARC=$HOME/.config/condarc
-__conda_setup="$('/home/leukelele/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/leukelele/.conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/leukelele/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/leukelele/.miniconda/etc/profile.d/conda.sh"
+    if [ -f "/home/leukelele/.conda/etc/profile.d/conda.sh" ]; then
+        . "/home/leukelele/.conda/etc/profile.d/conda.sh"
     else
-        export PATH="/home/leukelele/.miniconda/bin:$PATH"
+        export PATH="/home/leukelele/.conda/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # -----------------------------------------------------------------------------
 # afterwards

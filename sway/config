@@ -4,8 +4,8 @@ include catppuccin-mocha
 # autostart
 exec mako
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 360 'exec systemctl suspend-then-hibernate' \
+	timeout 600 'swaylock -f -c 000000' \
+	timeout 660 'exec systemctl suspend-then-hibernate' \
 	before-sleep 'swaylock -f -c 000000' \
 
 # default apps
@@ -162,8 +162,10 @@ input type:touchpad {
 	middle_emulation enabled
 }
 
-# disables touchscreen but keeps stylus
+# disables touchscreen and stylus; disabling just the screen results in
+# sporadic cursor movement
 input "1267:16394:ELAN_Touchscreen" events disabled
+input "1267:16394:ELAN_Touchscreen_Stylus" events disabled
 
 # set output and wallpaper
 output eDP-1 {
